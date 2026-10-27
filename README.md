@@ -68,9 +68,9 @@ I reviewed the live [Netlify site](https://zesty-croissant-e95ed9.netlify.app/) 
 
 I also checked the first Tab stop and skip-link behavior on all nine routes. The skip link had visible focus and Enter moved focus to the main content. On the FAQ page, Enter closed and reopened a native disclosure. This was a targeted keyboard check, not a complete keyboard or screen-reader audit.
 
-I captured current live Features-page screenshots at [320px](docs/evidence/features-current-320.png), [390px](docs/evidence/features-current-390.png), [768px](docs/evidence/features-current-768.png), [1024px](docs/evidence/features-current-1024.png), and [1440px](docs/evidence/features-current-1440.png). The live page includes a floating Netlify badge that is not part of my HTML or CSS and appears over page content in the screenshots. I still need to check whether I can disable or reposition it in Netlify.
+I captured clean Features-page screenshots from a local preview at [320px](docs/evidence/features-current-320.png), [390px](docs/evidence/features-current-390.png), [768px](docs/evidence/features-current-768.png), [1024px](docs/evidence/features-current-1024.png), and [1440px](docs/evidence/features-current-1440.png). I used a local preview because the live site has a floating Netlify badge that is not part of my HTML or CSS and appears over page content. The badge remains on the live site; I have not changed Netlify settings.
 
-I have not completed a 200% zoom review, a screen-reader review, a physical-phone check, or a current-version visitor task. Earlier screenshots and notes refer to previous versions and are kept only as historical records. More detail is in [testing.md](testing.md), the [manual test sheet](docs/manual-test-sheet.md), and the [evidence index](docs/evidence/README.md).
+I have not completed a 200% zoom review or a current-version visitor task. I received user-reported results for an iPhone 16/Chrome check and an iOS screen-reader check with no concerns, but the exact versions, routes, orientation, and actions were not recorded. Earlier screenshots and notes refer to previous versions and are kept only as historical records. More detail is in [testing.md](testing.md), the [manual test sheet](docs/manual-test-sheet.md), and the [evidence index](docs/evidence/README.md).
 
 ## Publishing
 

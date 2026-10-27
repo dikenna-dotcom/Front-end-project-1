@@ -6,9 +6,9 @@ Most screenshots and text records here were made before I changed the project to
 
 I have summarized the checks for the current release in [testing.md](../../testing.md). The manual checks I still need to do are in [the test sheet](../manual-test-sheet.md).
 
-## Current live Features screenshots
+## Current Features screenshots
 
-I captured the current published Features page on 27 October 2026 at browser viewport widths of 320px, 390px, 768px, 1024px, and 1440px. These are full-page browser captures of the live static example:
+I captured the current Features page from a local preview on 27 October 2026 at browser viewport widths of 320px, 390px, 768px, 1024px, and 1440px. These are full-page browser captures of the static example:
 
 | Viewport | Screenshot |
 |---|---|
@@ -18,7 +18,7 @@ I captured the current published Features page on 27 October 2026 at browser vie
 | 1024px | [features-current-1024.png](features-current-1024.png) |
 | 1440px | [features-current-1440.png](features-current-1440.png) |
 
-The live page includes a floating Netlify badge that is injected outside my source HTML and CSS. It appears over page content in these screenshots, so I still need to check whether I can disable or reposition it in Netlify before treating the captures as clean presentation evidence.
+I used a local preview so the floating Netlify badge, which is injected outside my source HTML and CSS, would not cover the page in the evidence. The badge remains visible on the published site; I have not changed the Netlify setting.
 
 ## Historical local screenshots
 
