@@ -15,7 +15,11 @@ The current revision removes the interactive planner and the Python web server. 
 
 Opened the generated release in a browser and checked the eight content routes plus `404.html` at 320px, 768px, and 1440px. All 27 route-and-viewport checks had no horizontal overflow. The Features page displayed the fixed fictional comparison at all three widths and had no form or script elements.
 
-These are focused local checks of the static package. They do not establish that the current site has passed a full accessibility audit, an independent user study, or a live Netlify deployment review.
+These are focused local checks of the static package. They do not establish that the current site has passed a full accessibility audit or an independent user study.
+
+## Live Netlify check
+
+The owner provided [https://zesty-croissant-e95ed9.netlify.app/](https://zesty-croissant-e95ed9.netlify.app/). The published Home and Features pages were fetched and checked on 27 October 2026. Both show the current static version; Features displays the fixed fictional comparison and no interactive planner. This confirms those two routes only. A complete live-route, custom-404, responsive, and accessibility check remains outstanding.
 
 ## Checks still needed
 

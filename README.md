@@ -62,6 +62,8 @@ Open [http://localhost:8000/](http://localhost:8000/) and press `Ctrl+C` in the 
 
 The repository is `https://github.com/dikenna-dotcom/Front-end-project-1`. The Netlify configuration in [netlify.toml](netlify.toml) runs the release script and publishes `build/netlify/`. The release contains only the nine HTML pages and stylesheet; project documentation and local evidence are not deployed.
 
+The site is published at [https://zesty-croissant-e95ed9.netlify.app/](https://zesty-croissant-e95ed9.netlify.app/). The live Home and Features pages were checked and show the current static version, including the fixed fictional comparison. Complete a full route, responsive, 404, and accessibility review before treating the deployment as fully tested.
+
 To rebuild the publish folder locally:
 
 ```powershell
@@ -80,11 +82,11 @@ git push -u origin main
 
 If Git asks for an author name or email, configure them for this repository. A public repository may expose commit author emails; GitHub also provides a private noreply address in **Settings → Emails**. This is separate from the email used to sign in.
 
-In Netlify, import the GitHub repository and authorize access. Keep the build settings from `netlify.toml`. Future pushes to `main` trigger a deployment. Confirm the deploy succeeds and inspect the published pages before sharing the live URL. Do not put account passwords, access tokens, or other credentials in this project.
+Netlify is connected to the GitHub repository. Keep the build settings from `netlify.toml`; pushes to `main` should trigger a deployment. Confirm each deploy succeeds and inspect the published pages before sharing changes. Do not put account passwords, access tokens, or other credentials in this project.
 
 ## Testing status
 
-The current release build was checked for the expected file inventory and the absence of forms, scripts, and planner references. The built site was opened in a browser and all nine HTML pages were checked at 320px, 768px, and 1440px; no horizontal overflow was found. These checks do not replace manual keyboard, assistive-technology, device, or post-deployment checks.
+The current release build was checked for the expected file inventory and the absence of forms, scripts, and planner references. The local build was opened in a browser and all nine HTML pages were checked at 320px, 768px, and 1440px; no horizontal overflow was found. The live Home and Features pages were also checked at [the Netlify URL](https://zesty-croissant-e95ed9.netlify.app/). These checks do not replace a full live-route review or manual keyboard, assistive-technology, and device checks.
 
 Earlier browser, validation, and published-site records concern earlier revisions. See [testing.md](testing.md), the [manual test sheet](docs/manual-test-sheet.md), and the [evidence index](docs/evidence/README.md) for current and historical status.
 

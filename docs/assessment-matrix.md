@@ -13,7 +13,7 @@ An earlier workspace document contained a separate assessment extract for an int
 | Present static data in a useful way | Eight connected informational pages explain the UAR concept, proposed review process, compatibility terminology, security boundaries, hypothetical examples, and common questions. The Features page includes one fixed comparison using explicitly fictional data. | Implemented in the HTML pages. The comparison does not accept or generate visitor input. |
 | Help users achieve a goal | Visitors can learn what UAR proposes, follow its process, interpret illustrative labels, and find related examples and definitions. Shared navigation, page headings, contextual links, and a responsive layout support those tasks. | The content structure and navigation are present. Current automated layout checks cover the release build at 320px, 768px, and 1440px. Broader independent user testing remains limited. |
 | Advance the site owner's goal | The site explains the proposed idea while clearly stating that this website is not a working runtime and does not assess applications or devices. | Scope boundaries appear on the home, Features, Security, About, Compatibility, and FAQ pages. |
-| Build and publish a static front end | HTML and CSS are packaged by the standard-library release script. Netlify is configured to publish the generated folder from the GitHub repository. | Local release build is verified. A successful deployment of this revision still needs confirmation in Netlify. |
+| Build and publish a static front end | HTML and CSS are packaged by the standard-library release script. Netlify publishes the generated folder from the GitHub repository. | Local release build is verified. The owner-provided live URL serves the current Home and Features pages; full live-site verification remains outstanding. |
 
 ## Scope and evidence limitations
 
@@ -21,7 +21,7 @@ An earlier workspace document contained a separate assessment extract for an int
 - Sample requirements, environments, use cases, and outcomes are fictional teaching examples.
 - Earlier screenshots, test notes, validation responses, and the previous Netlify review refer to earlier page revisions. They must not be presented as validation of the current content.
 - Retrospective wireframes were created after implementation. They document layout, not original design planning.
-- A public GitHub repository and successful Netlify deployment are separate tasks. Verify both before submission.
+- The public GitHub repository and [Netlify deployment](https://zesty-croissant-e95ed9.netlify.app/) are available. Confirm that future pushes deploy successfully and complete the remaining live-site checks before submission.
 
 ## Historical assessment material
 
