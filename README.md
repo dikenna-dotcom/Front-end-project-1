@@ -1,102 +1,94 @@
 # UAR — Universal Application Runtime
 
-By Dikenna Okose
+**By Dikenna Okose**
 
-## Project purpose
+## Project overview
 
-This is a static front-end milestone project for presenting useful information. It introduces the Universal Application Runtime (UAR) concept and explains a proposed way to think about application requirements, compatibility, security, policy, and execution decisions.
+For this milestone, I built a static website to explain the idea behind Universal Application Runtime (UAR). I wanted someone who had never heard of UAR to be able to understand the proposal, follow the suggested review process, and see what this website can and cannot tell them.
 
-The site is for people who are new to UAR or want a clear explanation of the idea. It helps visitors understand the proposed process and the limits of the information presented. It also supports the site owner's goal of explaining the concept accurately without suggesting that a UAR product or assessment service is available here.
+The site presents information; it is not the UAR product. It does not run applications, inspect devices, accept user input, or make real compatibility or safety decisions. The example on the Features page uses fictional information and is there to show how a comparison might be explained.
 
-The project is static HTML and CSS. It does not collect input, run a backend, inspect a visitor's device or application, or produce a real compatibility or safety assessment. The Features page contains only a fixed example using fictional data.
+This fits the milestone purpose of presenting static data in a useful way: visitors can learn about the concept, while the site gives a clear and honest introduction to the idea.
 
-## User needs
+## UX and design
 
-1. Understand what UAR proposes to do and what this website does not do.
-2. Follow the proposed review process.
-3. Understand Pass, Warning, and Blocker as illustrative labels rather than verified outcomes.
-4. Find hypothetical use cases and answers to common questions.
-5. Read and navigate the site on a small screen and with a keyboard.
+I organised the pages around the questions I thought a first-time visitor might ask:
 
-## Pages
+- What is UAR, and does this website actually run it?
+- What might a UAR review involve?
+- What do Pass, Warning, and Blocker mean?
+- What are the security and policy boundaries?
+- Where can I find an example or a quick answer?
 
-| Page | Information presented |
+I kept the same navigation and footer across the site so visitors can move between topics without having to find their way again on every page. The layout uses responsive CSS Grid and Flexbox, a simple colour palette, and a diagram made with HTML and CSS. The diagram and comparison are labelled as examples, not screenshots or results from a working product.
+
+I included skip links, semantic page landmarks, visible keyboard focus, clear headings, and native FAQ disclosures. The navigation remains visible and wraps on smaller screens.
+
+## Pages and content
+
+| Page | What I included |
 |---|---|
-| [Home](index.html) | UAR concept, project scope, and routes into the site |
-| [Features](features.html) | Proposed review areas and a fixed fictional comparison |
-| [How It Works](how-it-works.html) | The proposed process in five ordered stages |
-| [Compatibility](compatibility.html) | Illustrative Pass, Warning, and Blocker labels |
-| [Security](security.html) | Security, privacy, and policy considerations |
-| [Use Cases](use-cases.html) | Hypothetical examples |
-| [About](about.html) | Project purpose and limits |
+| [Home](index.html) | The UAR idea, the limits of this website, and links to the main topics |
+| [Features](features.html) | Four proposed review areas and a fixed comparison using fictional data |
+| [How It Works](how-it-works.html) | Five ordered stages in the proposed process |
+| [Compatibility](compatibility.html) | Explanations of the illustrative Pass, Warning, and Blocker labels |
+| [Security](security.html) | Security, privacy, and policy questions, kept separate from technical compatibility |
+| [Use Cases](use-cases.html) | Hypothetical situations to help explain the idea |
+| [About](about.html) | Why I made the site and what it does not claim |
 | [FAQ](faq.html) | Answers to common questions and a glossary |
-| [404](404.html) | Branded not-found page for supported hosts |
+| [404](404.html) | A branded page for visitors who follow a missing link |
 
-## Design and accessibility
-
-The pages use semantic HTML, consistent navigation, skip links, clear headings, visible focus, native FAQ disclosures, and responsive CSS Grid and Flexbox layouts. The homepage process diagram is built with HTML and CSS and is identified as an illustration. The Features example is fixed HTML content, not an interactive tool.
-
-Twenty-four SVG wireframes are included as retrospective layout references. They were created after the initial site implementation and are not represented as original pre-coding plans. The three Features wireframes were updated to show the current static example.
+The project also includes 24 SVG wireframes. I reconstructed them after the initial pages were implemented, so they are useful layout references, but they are not original pre-coding plans. I updated the three Features wireframes to show the current static example.
 
 ## Technologies
 
-- HTML5 for content and page structure.
-- CSS3 for responsive layouts, typography, and presentation.
-- Python 3 standard library for assembling the Netlify publish folder only; Python is not used to serve the deployed site.
-- Git and GitHub for source history and repository hosting.
-- Netlify for static-site publishing.
+1. **HTML5** — page content, navigation, headings, and page structure.
+2. **CSS3** — responsive layouts, typography, colours, and the homepage illustration.
+3. **Python 3 standard library** — builds the small Netlify publish folder; it does not run the published website.
+4. **Git and GitHub** — version history and source repository.
+5. **Netlify** — static hosting.
 
-The published site has no JavaScript, framework, backend, third-party library, or external font dependency.
+The published pages use HTML and CSS only. There is no JavaScript, framework, backend, third-party UI library, or externally hosted font.
 
-## Run locally
+## Running it on my computer
 
-From the project root, start Python's built-in static file server:
+I can preview the pages with Python's built-in web server. From the project folder, I run:
 
 ```powershell
 python -m http.server 8000
 ```
 
-Open [http://localhost:8000/](http://localhost:8000/) and press `Ctrl+C` in the terminal to stop the server. No dependency installation is required.
+Then I open [http://localhost:8000/](http://localhost:8000/). I press `Ctrl+C` in the terminal when I am finished. There are no packages to install.
 
-## Build and deploy with GitHub and Netlify
+## Testing
 
-The repository is `https://github.com/dikenna-dotcom/Front-end-project-1`. The Netlify configuration in [netlify.toml](netlify.toml) runs the release script and publishes `build/netlify/`. The release contains only the nine HTML pages and stylesheet; project documentation and local evidence are not deployed.
+I built the Netlify release and checked that it contains the nine HTML pages and the stylesheet, without forms, scripts, or project documentation. I opened the release in a browser and checked all nine routes at 320px, 768px, and 1440px. Those checks found no horizontal overflow.
 
-The site is published at [https://zesty-croissant-e95ed9.netlify.app/](https://zesty-croissant-e95ed9.netlify.app/). The live Home and Features pages were checked and show the current static version, including the fixed fictional comparison. Complete a full route, responsive, 404, and accessibility review before treating the deployment as fully tested.
+I also checked the published [Netlify site](https://zesty-croissant-e95ed9.netlify.app/). I confirmed that its Home and Features pages show the current static version. I have not yet completed a full live review of every route, the custom 404 response, keyboard navigation, screen-reader use, or a physical phone.
 
-To rebuild the publish folder locally:
+Earlier screenshots, visitor feedback, and validation notes refer to previous versions. I have kept them for reference, but they are not evidence that the current version passed those same checks. More detail is in [testing.md](testing.md), the [manual test sheet](docs/manual-test-sheet.md), and the [evidence index](docs/evidence/README.md).
+
+## Publishing
+
+The source is in the public GitHub repository [dikenna-dotcom/Front-end-project-1](https://github.com/dikenna-dotcom/Front-end-project-1), and the site is published at [zesty-croissant-e95ed9.netlify.app](https://zesty-croissant-e95ed9.netlify.app/).
+
+Netlify reads [netlify.toml](netlify.toml), runs the release script, and publishes `build/netlify/`. To rebuild that folder locally, I run:
 
 ```powershell
 python scripts/build_netlify_release.py
 ```
 
-To connect a fresh local copy to the repository, run these commands from the project root:
+The release script copies only the site pages and stylesheet. It leaves out the project notes and evidence.
 
-```powershell
-git init -b main
-git add .
-git commit -m "Create static UAR front end"
-git remote add origin https://github.com/dikenna-dotcom/Front-end-project-1.git
-git push -u origin main
-```
+Netlify is connected to the GitHub repository, so a push to `main` should trigger a new deploy. After a change, I check that the deploy succeeds and look at the live pages. I never put passwords or access tokens in the project.
 
-If Git asks for an author name or email, configure them for this repository. A public repository may expose commit author emails; GitHub also provides a private noreply address in **Settings → Emails**. This is separate from the email used to sign in.
+## A note about the assessment brief
 
-Netlify is connected to the GitHub repository. Keep the build settings from `netlify.toml`; pushes to `main` should trigger a deployment. Confirm each deploy succeeds and inspect the published pages before sharing changes. Do not put account passwords, access tokens, or other credentials in this project.
-
-## Testing status
-
-The current release build was checked for the expected file inventory and the absence of forms, scripts, and planner references. The local build was opened in a browser and all nine HTML pages were checked at 320px, 768px, and 1440px; no horizontal overflow was found. The live Home and Features pages were also checked at [the Netlify URL](https://zesty-croissant-e95ed9.netlify.app/). These checks do not replace a full live-route review or manual keyboard, assistive-technology, and device checks.
-
-Earlier browser, validation, and published-site records concern earlier revisions. See [testing.md](testing.md), the [manual test sheet](docs/manual-test-sheet.md), and the [evidence index](docs/evidence/README.md) for current and historical status.
-
-## Assessment scope note
-
-The project purpose supplied for this milestone is static presentation of information. An earlier project brief in the workspace described separate JavaScript interaction requirements. This version follows the static-site direction and does not meet those interaction-specific requirements. Confirm the applicable assessment brief with the course provider before submission.
+I have followed the static-information purpose for this project. An earlier brief in the workspace describes a different, interaction-based assessment that requires JavaScript. This version does not meet those interaction-specific requirements. If that is the brief being assessed, I need to check with my course provider which requirement takes priority before submitting.
 
 ## Credits
 
-- The project concept and factual scope are based on the UAR master brief supplied for this project. A separate UAR runtime repository was not inspected.
-- Public Code Institute milestone examples informed general research into README structure, user stories, and CSS organisation. No code, distinctive wording, or assets were reused; sources and limits are listed in [docs/research.md](docs/research.md).
-- The HTML, CSS, and diagram were developed for this website. No downloaded media, external fonts, or third-party UI libraries are included.
-- AI assistance was used while developing the project and its documentation.
+- I based the UAR concept and its scope on the project brief supplied to me. I did not inspect a separate UAR runtime repository, so I have not claimed that the runtime exists or works.
+- I looked at public Code Institute milestone examples for general ideas about README structure, user stories, and organising CSS. I did not reuse their code, wording, or assets. I recorded the sources and limits in [docs/research.md](docs/research.md).
+- I wrote the HTML and CSS for this site and made the diagram for it. I have not included downloaded media, third-party UI libraries, or external fonts.
+- I used AI assistance while developing the project and writing some of the documentation.

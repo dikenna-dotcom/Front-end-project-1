@@ -1,6 +1,6 @@
 UAR content and claim register
 
-This register reflects the supplied project purpose and UAR master brief. The purpose is to present static data in a way that helps visitors and supports the site owner's communication goal. The separate UAR runtime repository and its implementation were not inspected. Claims about existing product capabilities therefore remain unverified; where content is retained, it is labelled as a proposed model, illustration or site boundary.
+I use this register to keep the wording on the site accurate. The milestone asks me to present static information that helps visitors and supports the site's communication goal. I based the UAR descriptions on the supplied brief; I did not inspect a separate runtime repository. For that reason, I describe UAR capabilities as proposals or examples rather than claiming that a working product has them.
 
 | Claim or topic | Source supplied by owner | Evidence status | Wording used | Page |
 | --- | --- | --- | --- | --- |
@@ -14,6 +14,6 @@ This register reflects the supplied project purpose and UAR master brief. The pu
 | Use-case examples | Master brief section 2 and 7 | Authored hypotheticals; not product outcomes | Explicitly labelled hypothetical; no scenario is stated as tested | Use Cases |
 | Project status and future direction | Master brief section 2 and 7 | Runtime status and roadmap not supplied | Website scope is stated; future product status is left for owner confirmation | About, FAQ |
 
-Review rule
+How I use this register
 
-Any later change that describes a capability as available or planned must be checked with the owner and entered here with its source, status, approved wording and destination. This register does not certify product facts outside the supplied brief.
+If I add a claim about a real or planned capability, I check it against an approved source and record where it appears and how certain it is. This register only covers the information supplied for this project; it does not verify claims about a separate UAR product.

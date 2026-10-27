@@ -1,10 +1,10 @@
-# Wireframe references
+# My wireframe references
 
 ## Timing and purpose
 
-These 24 SVGs are retrospective layout references, not original pre-implementation wireframes. The first set was reconstructed on 24 October 2026 after the initial HTML/CSS implementation. The three Features drawings were updated on 27 October 2026 to reflect the current fixed, fictional comparison example.
+I made these 24 SVGs as layout references after I had already built the first version of the pages. The original set was reconstructed on 24 October 2026. I updated the three Features drawings on 27 October 2026 to show the current fixed example with fictional information. They are not original wireframes made before coding.
 
-The drawings represent mobile (320px), tablet (768px), and desktop (1440px) viewports. They show page structure and reading order rather than final visual styling or complete copy.
+Each page has a mobile (320px), tablet (768px), and desktop (1440px) drawing. I used them to show the rough page structure and reading order, not the finished styling or every line of copy.
 
 ## Available files
 
@@ -21,8 +21,8 @@ The drawings represent mobile (320px), tablet (768px), and desktop (1440px) view
 
 ## Current project scope
 
-The project is a static information site. The Features wireframes show proposed review-area cards followed by fixed fictional requirements, a hypothetical environment, and illustrative comparison labels. They do not show a form or visitor-generated result.
+The project is a static information site. In the Features drawings, I show the review-area cards, fixed fictional requirements, a hypothetical environment, and example comparison labels. There is no form or visitor-generated result.
 
-The current responsive CSS stacks the feature and example cards at 840px and below. The homepage flow illustration stacks below 1180px. The six-link primary navigation remains visible and wraps on narrow layouts.
+In the current CSS, the feature and example cards stack at 840px and below. The homepage diagram stacks below 1180px. The six main navigation links stay visible and wrap on narrower screens.
 
-The non-Features wireframes remain retrospective layout references and were not regenerated during the static-scope revision. Compare them with current pages in a browser before using them as current visual evidence. Further design decisions are recorded in [design-decisions.md](../design-decisions.md).
+I did not redraw the other page wireframes when I changed the Features page to a static example. Before using any of these drawings as current visual evidence, compare them with the live pages. I explain the design choices in [design-decisions.md](../design-decisions.md).

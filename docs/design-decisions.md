@@ -1,33 +1,33 @@
-# Design decisions
+# Why I made these design choices
 
 ## Project goal
 
-The supplied milestone purpose is static presentation of information. The website explains the Universal Application Runtime (UAR) concept to people who may be unfamiliar with it and makes the site's limits explicit. It does not implement a runtime or assess visitors' applications or devices.
+I made this site to explain the Universal Application Runtime (UAR) idea to people who may be hearing about it for the first time. The milestone asks for static information that is useful to visitors, so the site explains the proposal and makes its own limits clear. It does not run applications or assess a visitor's device.
 
 ## Five UX planes
 
-1. **Strategy:** Help a first-time visitor understand the proposed UAR idea and its boundaries; help the site owner communicate the concept without implying an operational product.
-2. **Scope:** Cover the concept, proposed workflow, compatibility terminology, security and policy questions, hypothetical use cases, project scope, and FAQ. Do not collect user input, generate a result, scan a device, accept an upload, or claim to make a real assessment.
-3. **Structure:** Use eight content pages with distinct purposes, a shared six-link main navigation, contextual links, and a consistent footer. Use Cases and FAQ are available from the footer and relevant page links.
-4. **Skeleton:** Use semantic landmarks, clear heading order, an ordered workflow, native FAQ disclosures, and responsive layouts that stack at narrower widths.
-5. **Surface:** Use system fonts, a light background, dark text, blue accents, consistent spacing, and a CSS-built homepage illustration. The Features page uses static cards and a fictional example.
+1. **Strategy:** I want a first-time visitor to understand both the UAR proposal and what this website does not do.
+2. **Scope:** I cover the idea, suggested workflow, compatibility terms, security and policy questions, hypothetical examples, and common questions. I left out forms, uploads, device scans, and real assessment results so the site does not promise something it cannot do.
+3. **Structure:** I split the information across eight pages. The main navigation has six links; Use Cases and FAQ are still easy to find in the footer and from related pages.
+4. **Skeleton:** I used semantic page areas, a clear heading order, a numbered workflow, native FAQ disclosures, and layouts that stack on narrower screens.
+5. **Surface:** I chose a light background, dark text, blue accents, system fonts, and consistent spacing. The homepage diagram and the Features example are both clearly labelled as illustrations.
 
 ## Static example and content boundaries
 
-The Features page presents stated fictional requirements next to a hypothetical environment. Fixed Pass and Blocker labels illustrate how a proposed review might communicate a mismatch or match. The content is authored in HTML; visitors cannot edit it. It is not a compatibility result, security verdict, or safety guarantee.
+On the Features page, I placed fictional application requirements next to a made-up environment. The fixed Pass and Blocker labels show how a proposed review might describe a match or a mismatch. Visitors cannot edit the example, and it is not a real compatibility result, security verdict, or safety guarantee.
 
-Other product statements use proposed, illustrative, or hypothetical language. The separate UAR runtime was not inspected. See the [content register](content-register.md) for the claim boundaries.
+I use words such as “proposed”, “illustrative”, and “hypothetical” when describing the idea. I have not inspected a separate UAR runtime. I keep track of these boundaries in the [content register](content-register.md).
 
 ## Responsive layout and accessibility
 
-Grid and Flexbox create the main layouts and allow content to stack or wrap. At 840px and below, multi-column page sections stack and the header navigation can wrap; at 520px and below, page gutters narrow. The homepage flow illustration stacks below 1180px to keep its labels readable.
+I used Grid and Flexbox so page sections can stack and the navigation can wrap. At 840px and below, the multi-column sections stack; at 520px and below, the page gutters get smaller. The homepage diagram changes to a vertical layout below 1180px so its labels have room.
 
-Pages use a skip link, semantic page landmarks, visible keyboard focus, descriptive link text, and native `details`/`summary` disclosures for FAQ content. Wireframes are retrospective reconstructions, not proof of pre-implementation planning. See [the wireframe index](wireframes/README.md).
+I included a skip link, semantic page landmarks, visible keyboard focus, descriptive link text, and native `details`/`summary` controls for the FAQ. The wireframes were made after the first implementation, so I treat them as layout references, not original planning evidence. They are listed in [the wireframe index](wireframes/README.md).
 
 ## Hosting and release
 
-GitHub is the source repository and Netlify is the intended static host. [netlify.toml](../netlify.toml) runs [the release script](../scripts/build_netlify_release.py), which copies the nine HTML pages and stylesheet into `build/netlify/`. Documentation, evidence, and local development files are not part of the published package. No runtime server or package installation is required.
+I keep the source in GitHub and publish the static site through Netlify. [netlify.toml](../netlify.toml) runs [the release script](../scripts/build_netlify_release.py), which copies the nine HTML pages and stylesheet into `build/netlify/`. My notes, evidence, and local development files stay out of the published folder. The site does not need a runtime server or package installation.
 
 ## Historical note
 
-An earlier revision contained a visitor-input planner and an optional Python/Heroku server. Those features were removed to align with the static-information project purpose. Old planner screenshots and interaction test records are retained only as historical evidence and do not describe the current project.
+I originally had a planner that accepted visitor input and an optional Python/Heroku server. I removed both when I brought the project back in line with its static-information purpose. I have kept some screenshots and test notes from that version, but they describe the earlier site, not this one.
