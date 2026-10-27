@@ -20,6 +20,8 @@ I captured the current Features page from a local preview on 27 October 2026 at 
 
 I used a local preview so the floating Netlify badge, which is injected outside my source HTML and CSS, would not cover the page in the evidence. The badge remains visible on the published site; I have not changed the Netlify setting.
 
+I also checked all nine routes in Microsoft Edge 156.0.4314.50 at 200% browser zoom. The resulting CSS viewport was 640px wide. The navigation remained inside the viewport, with no overlap or horizontal overflow. Here is the full-page Features capture: [features-zoom-200.png](features-zoom-200.png).
+
 ## Historical local screenshots
 
 I captured these earlier page versions at CSS viewport widths of 320px, 390px, 768px, 1024px, and 1440px:
