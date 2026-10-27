@@ -33,11 +33,17 @@ I checked the GitHub repository and live site again after the latest push on 27 
 
 The floating Netlify badge remains visible on the published site. It is injected outside my source HTML and CSS; I left it enabled and used a local preview for clean screenshots.
 
+## First-time visitor feedback
+
+On 27 October 2026, I received feedback from one person who had not used the site before. They understood UAR as a concept for considering whether an application might work in a particular environment and what should be considered before running it. They understood that the site explains the proposal, its features, and its suggested stages. They described the Features content as an example of questions someone might consider, not a real check of a device or application. They also found the site straightforward to navigate and said the explanations helped them understand the concept.
+
+This feedback supports the current explanations and the clear distinction between a proposal and a working assessment. I did not make a change based on this single response. It is one formative test, not evidence from a broad user study. The visitor's description of a “review planner” refers to the illustrative Features example; the current page has no interactive planner.
+
 These are focused checks, not a full accessibility audit or a broad user study. The keyboard checks cover the skip link and the FAQ disclosure, not every link in a full keyboard-only walkthrough.
 
 ## Checks still open
 
-1. Ask a first-time visitor to explain the UAR concept, what the website does, and whether the Features example is a real assessment. I cannot create genuine independent visitor feedback myself, so this needs a real visitor.
-2. If available, add the iOS and Chrome versions, orientation, pages, and actions to the user's already reported iPhone 16 and VoiceOver results. The user reported no issues or VoiceOver concerns, but those test details were not recorded.
+1. If available, add the iOS and Chrome versions, orientation, pages, and actions to the user's already reported iPhone 16 and VoiceOver results. The user reported no issues or VoiceOver concerns, but those test details were not recorded.
+2. A larger or more varied set of first-time visitors could provide broader evidence than this single formative test.
 
 The [manual test sheet](docs/manual-test-sheet.md) has the current status for each check. Screenshots and notes from before the static-site change are listed in the [evidence index](docs/evidence/README.md) as historical records, not evidence for the current release.
