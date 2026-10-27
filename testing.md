@@ -10,7 +10,7 @@ I checked that the project builds as a static site, that the published pages loa
 
 ## Live-site checks
 
-I checked the live [Netlify site](https://zesty-croissant-e95ed9.netlify.app/) on 27 October 2026.
+The following checks were run on the previous [Netlify site](https://zesty-croissant-e95ed9.netlify.app/) on 27 October 2026. The route and responsive results below are historical and do not by themselves verify the current domain.
 
 - All nine page routes, including `/404.html`, returned HTTP 200.
 - I checked those routes at browser viewport widths of 320px, 390px, 768px, 1024px, and 1440px: 45 route-and-width checks in total. The stylesheet loaded, the main content was present, and I found no horizontal overflow, forms, or project JavaScript.
@@ -20,16 +20,26 @@ I checked the live [Netlify site](https://zesty-croissant-e95ed9.netlify.app/) o
 - I captured the current Features page from a local preview at [320px](docs/evidence/features-current-320.png), [390px](docs/evidence/features-current-390.png), [768px](docs/evidence/features-current-768.png), [1024px](docs/evidence/features-current-1024.png), and [1440px](docs/evidence/features-current-1440.png). The local version uses the project files and does not include the injected Netlify badge.
 - I added three question-led starting points to the home page and checked their links to the workflow, compatibility and security pages at 320px, 768px and 1440px. All three destinations loaded and the cards had no horizontal overflow. I saved local screenshots at [320px](docs/evidence/home-starting-points-320.png), [768px](docs/evidence/home-starting-points-768.png), and [1440px](docs/evidence/home-starting-points-1440.png).
 
+## Current Netlify site smoke test
+
+I checked the new [uar-project.netlify.app](https://uar-project.netlify.app/) site on 27 October 2026.
+
+- The homepage loaded and showed the question-led starting points.
+- The seven clean navigation paths (`/features`, `/how-it-works`, `/compatibility`, `/security`, `/use-cases`, `/about`, and `/faq`) returned HTTP 200 with the expected page titles.
+- `/404.html` returned HTTP 200. A made-up path returned HTTP 404 and showed the branded Page Not Found page with working Home, FAQ, and How It Works links.
+- The stylesheet returned HTTP 200, loaded in the browser, and contains the `.starting-point` rule.
+- I have not repeated the five-width, 200% zoom, or keyboard checks on this new domain. I also have not confirmed the deployed commit in the Netlify dashboard. The stylesheet response hash differs from my local source, so I have not confirmed byte-for-byte parity.
+
 ## GitHub and Netlify deployment check
 
-I checked the GitHub repository and live site after the latest push on 27 October 2026.
+I checked the GitHub repository and the new live site on 27 October 2026.
 
 - GitHub repository: [dikenna-dotcom/Front-end-project-1](https://github.com/dikenna-dotcom/Front-end-project-1).
-- Latest GitHub `main` commit checked: `22b5c4a` (`Improve home page guidance for static visitors`). Local and remote `main` matched.
-- Published site: [zesty-croissant-e95ed9.netlify.app](https://zesty-croissant-e95ed9.netlify.app/).
-- The site responds, but after the latest push the new home-page question-led links were not present in the published HTML. The live stylesheet SHA-256 also differs from the current `assets/css/style.css`.
-- The source release script succeeds locally and creates the expected ten public static files. I have not confirmed the cause of the stale live deployment or seen the corresponding deployment record in the Netlify dashboard.
-- The previous route, link, 404, and responsive checks describe the version Netlify was serving before this latest site-code change. They should not be treated as verification of the new homepage until its deploy completes.
+- Latest GitHub `main` commit checked: `9f067db` (`Record pending Netlify deployment update`). The homepage and styling changes are in `22b5c4a` (`Improve home page guidance for static visitors`).
+- Current published site: [uar-project.netlify.app](https://uar-project.netlify.app/). It shows the updated homepage and passes the route smoke test above.
+- The Netlify dashboard was not available to confirm which GitHub commit was deployed. The stylesheet loads and contains the new starting-point selector, but its response hash differs from the local source.
+- The source release script succeeds locally and creates the expected ten public static files.
+- The five-width, 200% zoom, and keyboard results above are from the previous Netlify domain. They still need to be repeated on the new site.
 
 The floating Netlify badge remains visible on the published site. It is injected outside my source HTML and CSS; I left it enabled and used a local preview for clean screenshots.
 
@@ -43,7 +53,7 @@ These are focused checks, not a full accessibility audit or a broad user study. 
 
 ## Checks still open
 
-1. Check the Netlify dashboard's latest deploy for branch, commit and build result; resolve the deployment if it has failed or is not tracking `main`. Then repeat the live-page and stylesheet checks against the new release.
+1. Check the Netlify dashboard's latest deploy for branch, commit and build result, and confirm the stylesheet matches the intended source. Then repeat the five-width, 200% zoom, and keyboard checks on the new domain.
 2. If available, add the iOS and Chrome versions, orientation, pages, and actions to the user's already reported iPhone 16 and VoiceOver results. The user reported no issues or VoiceOver concerns, but those test details were not recorded.
 3. A larger or more varied set of first-time visitors could provide broader evidence than this single formative test.
 
