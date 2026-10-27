@@ -62,11 +62,15 @@ Then I open [http://localhost:8000/](http://localhost:8000/). I press `Ctrl+C` i
 
 ## Testing
 
-I built the Netlify release and checked that it contains the nine HTML pages and the stylesheet, without forms, scripts, or project documentation. I opened the release in a browser and checked all nine routes at 320px, 768px, and 1440px. Those checks found no horizontal overflow.
+I built the Netlify release and checked that it contains the nine HTML pages and stylesheet, with no forms, scripts, or project documentation. The W3C Nu checker reported no messages for any of the nine source HTML files. The live stylesheet passed the W3C Jigsaw CSS validator with no errors; it returned one informational warning that custom properties cannot be checked statically.
 
-I also checked the published [Netlify site](https://zesty-croissant-e95ed9.netlify.app/). I confirmed that its Home and Features pages show the current static version. I have not yet completed a full live review of every route, the custom 404 response, keyboard navigation, screen-reader use, or a physical phone.
+I reviewed the live [Netlify site](https://zesty-croissant-e95ed9.netlify.app/) on 27 October 2026. All nine page routes returned successfully and were checked at 320px, 390px, 768px, 1024px, and 1440px. The checks found no horizontal overflow, confirmed that the stylesheet loaded, and found no forms or project JavaScript. Internal links returned successfully. A made-up URL returned the branded 404 page with an HTTP 404 response, and its links worked.
 
-Earlier screenshots, visitor feedback, and validation notes refer to previous versions. I have kept them for reference, but they are not evidence that the current version passed those same checks. More detail is in [testing.md](testing.md), the [manual test sheet](docs/manual-test-sheet.md), and the [evidence index](docs/evidence/README.md).
+I also checked the first Tab stop and skip-link behavior on all nine routes. The skip link had visible focus and Enter moved focus to the main content. On the FAQ page, Enter closed and reopened a native disclosure. This was a targeted keyboard check, not a complete keyboard or screen-reader audit.
+
+I captured current live Features-page screenshots at [320px](docs/evidence/features-current-320.png), [390px](docs/evidence/features-current-390.png), [768px](docs/evidence/features-current-768.png), [1024px](docs/evidence/features-current-1024.png), and [1440px](docs/evidence/features-current-1440.png). The live page includes a floating Netlify badge that is not part of my HTML or CSS and appears over page content in the screenshots. I still need to check whether I can disable or reposition it in Netlify.
+
+I have not completed a 200% zoom review, a screen-reader review, a physical-phone check, or a current-version visitor task. Earlier screenshots and notes refer to previous versions and are kept only as historical records. More detail is in [testing.md](testing.md), the [manual test sheet](docs/manual-test-sheet.md), and the [evidence index](docs/evidence/README.md).
 
 ## Publishing
 
