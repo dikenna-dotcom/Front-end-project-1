@@ -22,15 +22,14 @@ I checked the live [Netlify site](https://zesty-croissant-e95ed9.netlify.app/) o
 
 ## GitHub and Netlify deployment check
 
-I checked the GitHub repository and live site again after the latest push on 27 October 2026.
+I checked the GitHub repository and live site after the latest push on 27 October 2026.
 
 - GitHub repository: [dikenna-dotcom/Front-end-project-1](https://github.com/dikenna-dotcom/Front-end-project-1).
-- Latest GitHub `main` commit at the time of the deployment check: `5a70234` (`Document latest Netlify deployment check`). Local and remote `main` matched.
+- Latest GitHub `main` commit checked: `22b5c4a` (`Improve home page guidance for static visitors`). Local and remote `main` matched.
 - Published site: [zesty-croissant-e95ed9.netlify.app](https://zesty-croissant-e95ed9.netlify.app/).
-- All eight content routes and `/404.html` responded with HTTP 200, and all linked to the stylesheet. An unknown route responded with HTTP 404 and displayed the branded not-found page.
-- The Features route displayed the current fixed comparison using fictional data. It has no review planner; this project is intentionally static and has no project JavaScript.
-- The site was published and responding, but I did not inspect the Netlify dashboard to confirm which commit ID its latest deploy reports. The latest GitHub commit only changed documentation and screenshots, not the site HTML or CSS.
-- I compared the published stylesheet with `assets/css/style.css`; their SHA-256 hashes matched. The latest GitHub commit at this check was `5a70234`; its changes were documentation only, so no site-code change was waiting to be published. I did not inspect the private Netlify dashboard's deploy record.
+- The site responds, but after the latest push the new home-page question-led links were not present in the published HTML. The live stylesheet SHA-256 also differs from the current `assets/css/style.css`.
+- The source release script succeeds locally and creates the expected ten public static files. I have not confirmed the cause of the stale live deployment or seen the corresponding deployment record in the Netlify dashboard.
+- The previous route, link, 404, and responsive checks describe the version Netlify was serving before this latest site-code change. They should not be treated as verification of the new homepage until its deploy completes.
 
 The floating Netlify badge remains visible on the published site. It is injected outside my source HTML and CSS; I left it enabled and used a local preview for clean screenshots.
 
@@ -44,7 +43,8 @@ These are focused checks, not a full accessibility audit or a broad user study. 
 
 ## Checks still open
 
-1. If available, add the iOS and Chrome versions, orientation, pages, and actions to the user's already reported iPhone 16 and VoiceOver results. The user reported no issues or VoiceOver concerns, but those test details were not recorded.
-2. A larger or more varied set of first-time visitors could provide broader evidence than this single formative test.
+1. Check the Netlify dashboard's latest deploy for branch, commit and build result; resolve the deployment if it has failed or is not tracking `main`. Then repeat the live-page and stylesheet checks against the new release.
+2. If available, add the iOS and Chrome versions, orientation, pages, and actions to the user's already reported iPhone 16 and VoiceOver results. The user reported no issues or VoiceOver concerns, but those test details were not recorded.
+3. A larger or more varied set of first-time visitors could provide broader evidence than this single formative test.
 
 The [manual test sheet](docs/manual-test-sheet.md) has the current status for each check. Screenshots and notes from before the static-site change are listed in the [evidence index](docs/evidence/README.md) as historical records, not evidence for the current release.

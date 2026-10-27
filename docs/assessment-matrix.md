@@ -13,7 +13,7 @@ There is a possible mismatch I need to flag. An earlier document in the workspac
 | Present static data in a useful way | Eight connected informational pages explain the UAR concept, proposed review process, compatibility terminology, security boundaries, hypothetical examples, and common questions. The Features page includes one fixed comparison using explicitly fictional data. | Implemented in the HTML pages. The comparison does not accept or generate visitor input. |
 | Help users achieve a goal | Visitors can learn what UAR proposes, follow its process, interpret illustrative labels, and find related examples and definitions. Shared navigation, page headings, contextual links, and a responsive layout support those tasks. | Browser checks cover five widths from 320px to 1440px and Microsoft Edge at 200% zoom on all nine routes. One first-time visitor correctly described the site's purpose and understood that the Features example was not a real assessment. This is useful formative feedback, but broader independent user testing remains limited. |
 | Advance the site owner's goal | The site explains the proposed idea while clearly stating that this website is not a working runtime and does not assess applications or devices. | Scope boundaries appear on the home, Features, Security, About, Compatibility, and FAQ pages. |
-| Build and publish a static front end | HTML and CSS are packaged by the standard-library release script. Netlify publishes the generated folder from the GitHub repository. | Local release build is verified. All eight content routes and the custom 404 route respond on the live Netlify site, the stylesheet loads, and the Features page serves the fixed example. The latest GitHub `main` commit checked was `5a70234`; its changes were documentation only. I did not verify the deployed commit in the Netlify dashboard. |
+| Build and publish a static front end | HTML and CSS are packaged by the standard-library release script. Netlify publishes the generated folder from the GitHub repository. | The local build is verified. The latest GitHub `main` commit checked is `22b5c4a`, which contains the new home-page guidance. The live site responds but did not yet show the new content, and its stylesheet did not match the current source. The Netlify deployment needs to be checked before this update can be considered published. |
 
 ## What this evidence does and does not show
 
@@ -21,7 +21,7 @@ There is a possible mismatch I need to flag. An earlier document in the workspac
 - The sample requirements, environments, use cases, and outcomes are fictional.
 - Some screenshots, test notes, validator responses, and the first Netlify review come from earlier versions. I do not treat them as proof that the current pages passed those checks.
 - I made the wireframes after implementation. They show layout ideas, not a pre-coding design process.
-- The [GitHub repository](https://github.com/dikenna-dotcom/Front-end-project-1) and [Netlify site](https://zesty-croissant-e95ed9.netlify.app/) are available. I checked the live routes and the fixed Features example after the latest GitHub push; I have not confirmed the deployment commit identifier in the Netlify dashboard.
+- The [GitHub repository](https://github.com/dikenna-dotcom/Front-end-project-1) and [Netlify site](https://zesty-croissant-e95ed9.netlify.app/) are available. After the latest site-code push, the new homepage content was not yet visible on Netlify. I need to check the Netlify dashboard and retest the live release.
 
 ## Earlier assessment notes
 

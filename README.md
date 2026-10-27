@@ -64,7 +64,7 @@ Then I open [http://localhost:8000/](http://localhost:8000/). I press `Ctrl+C` i
 
 I built the Netlify release and checked that it contains the nine HTML pages and stylesheet, with no forms, scripts, or project documentation. The W3C Nu checker reported no messages for any of the nine source HTML files. An earlier stylesheet passed the W3C Jigsaw CSS validator with no errors and one informational warning about custom properties. After the recent CSS update, the browser loaded the stylesheet and parsed the new rules, but a fresh Jigsaw request returned HTTP 500, so I cannot claim a new validator result for the current stylesheet.
 
-I reviewed the live [Netlify site](https://zesty-croissant-e95ed9.netlify.app/) on 27 October 2026. All nine page routes returned successfully and were checked at 320px, 390px, 768px, 1024px, and 1440px. The checks found no horizontal overflow, confirmed that the stylesheet loaded, and found no forms or project JavaScript. Internal links returned successfully. A made-up URL returned the branded 404 page with an HTTP 404 response, and its links worked.
+I reviewed the live [Netlify site](https://zesty-croissant-e95ed9.netlify.app/) on 27 October 2026. All nine page routes returned successfully and were checked at 320px, 390px, 768px, 1024px, and 1440px. The checks found no horizontal overflow, confirmed that the stylesheet loaded, and found no forms or project JavaScript. Internal links returned successfully. A made-up URL returned the branded 404 page with an HTTP 404 response, and its links worked. These route and layout results were from the version Netlify was serving before my latest site-code push.
 
 I also checked the first Tab stop and skip-link behavior on all nine routes. The skip link had visible focus and Enter moved focus to the main content. On the FAQ page, Enter closed and reopened a native disclosure. I set Microsoft Edge to 200% zoom and checked all nine routes: the navigation stayed within the viewport, the stylesheet loaded, and I found no horizontal overflow. This was a targeted keyboard and zoom check, not a complete accessibility audit.
 
@@ -84,7 +84,7 @@ python scripts/build_netlify_release.py
 
 The release script copies only the site pages and stylesheet. It leaves out the project notes and evidence.
 
-Netlify is connected to the GitHub repository, so a push to `main` should trigger a new deploy. After a change, I check that the deploy succeeds and look at the live pages. I never put passwords or access tokens in the project.
+Netlify is configured to build the `main` branch from GitHub. After my latest push, I checked the live site but the new home-page starting points were not there yet, and its stylesheet did not match my current source. I need to check the Netlify deploy status before treating this update as published. I never put passwords or access tokens in the project.
 
 ## A note about the assessment brief
 
