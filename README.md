@@ -12,7 +12,7 @@ This fits the milestone purpose of presenting static data in a useful way: visit
 
 ## UX and design
 
-I organised the pages around the questions I thought a first-time visitor might ask:
+I organised the pages around the questions I thought a first-time visitor might ask. The home page also has three question-led starting points to help visitors choose where to go next:
 
 - What is UAR, and does this website actually run it?
 - What might a UAR review involve?
@@ -20,7 +20,7 @@ I organised the pages around the questions I thought a first-time visitor might 
 - What are the security and policy boundaries?
 - Where can I find an example or a quick answer?
 
-I kept the same navigation and footer across the site so visitors can move between topics without having to find their way again on every page. The layout uses responsive CSS Grid and Flexbox, a simple colour palette, and a diagram made with HTML and CSS. The diagram and comparison are labelled as examples, not screenshots or results from a working product.
+I kept the same navigation and footer across the site so visitors can move between topics without having to find their way again on every page. On the home page, I added three question-led routes to the workflow, compatibility labels, and security and privacy information so visitors can start with the topic they need. The layout uses responsive CSS Grid and Flexbox, a simple colour palette, and a diagram made with HTML and CSS. The diagram and comparison are labelled as examples, not screenshots or results from a working product.
 
 I included skip links, semantic page landmarks, visible keyboard focus, clear headings, and native FAQ disclosures. The navigation remains visible and wraps on smaller screens.
 
@@ -62,7 +62,7 @@ Then I open [http://localhost:8000/](http://localhost:8000/). I press `Ctrl+C` i
 
 ## Testing
 
-I built the Netlify release and checked that it contains the nine HTML pages and stylesheet, with no forms, scripts, or project documentation. The W3C Nu checker reported no messages for any of the nine source HTML files. The live stylesheet passed the W3C Jigsaw CSS validator with no errors; it returned one informational warning that custom properties cannot be checked statically.
+I built the Netlify release and checked that it contains the nine HTML pages and stylesheet, with no forms, scripts, or project documentation. The W3C Nu checker reported no messages for any of the nine source HTML files. An earlier stylesheet passed the W3C Jigsaw CSS validator with no errors and one informational warning about custom properties. After the recent CSS update, the browser loaded the stylesheet and parsed the new rules, but a fresh Jigsaw request returned HTTP 500, so I cannot claim a new validator result for the current stylesheet.
 
 I reviewed the live [Netlify site](https://zesty-croissant-e95ed9.netlify.app/) on 27 October 2026. All nine page routes returned successfully and were checked at 320px, 390px, 768px, 1024px, and 1440px. The checks found no horizontal overflow, confirmed that the stylesheet loaded, and found no forms or project JavaScript. Internal links returned successfully. A made-up URL returned the branded 404 page with an HTTP 404 response, and its links worked.
 

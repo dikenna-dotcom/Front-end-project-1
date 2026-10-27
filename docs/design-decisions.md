@@ -8,7 +8,7 @@ I made this site to explain the Universal Application Runtime (UAR) idea to peop
 
 1. **Strategy:** I want a first-time visitor to understand both the UAR proposal and what this website does not do.
 2. **Scope:** I cover the idea, suggested workflow, compatibility terms, security and policy questions, hypothetical examples, and common questions. I left out forms, uploads, device scans, and real assessment results so the site does not promise something it cannot do.
-3. **Structure:** I split the information across eight pages. The main navigation has six links; Use Cases and FAQ are still easy to find in the footer and from related pages.
+3. **Structure:** I split the information across eight pages. The main navigation has six links; Use Cases and FAQ are still easy to find in the footer and from related pages. The home page also offers three question-led routes into the workflow, compatibility labels and security boundaries, so visitors can start with the topic they need.
 4. **Skeleton:** I used semantic page areas, a clear heading order, a numbered workflow, native FAQ disclosures, and layouts that stack on narrower screens.
 5. **Surface:** I chose a light background, dark text, blue accents, system fonts, and consistent spacing. The homepage diagram and the Features example are both clearly labelled as illustrations.
 

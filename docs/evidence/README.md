@@ -22,6 +22,16 @@ I used a local preview so the floating Netlify badge, which is injected outside 
 
 I also checked all nine routes in Microsoft Edge 156.0.4314.50 at 200% browser zoom. The resulting CSS viewport was 640px wide. The navigation remained inside the viewport, with no overlap or horizontal overflow. Here is the full-page Features capture: [features-zoom-200.png](features-zoom-200.png).
 
+## Current home-page starting points
+
+After adding question-led starting points to the home page, I captured the local page at three viewport widths to show how the cards reflow:
+
+| Viewport | Screenshot |
+|---|---|
+| 320px | [home-starting-points-320.png](home-starting-points-320.png) |
+| 768px | [home-starting-points-768.png](home-starting-points-768.png) |
+| 1440px | [home-starting-points-1440.png](home-starting-points-1440.png) |
+
 ## Historical local screenshots
 
 I captured these earlier page versions at CSS viewport widths of 320px, 390px, 768px, 1024px, and 1440px:

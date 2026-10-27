@@ -6,7 +6,7 @@ I checked that the project builds as a static site, that the published pages loa
 
 - I ran `python scripts/build_netlify_release.py`. The Netlify release contains nine HTML pages and `assets/css/style.css`; it excludes forms, scripts, the removed planner, and project documentation.
 - I submitted all nine source HTML files to the W3C Nu checker. Each returned zero messages and zero errors.
-- The live stylesheet passed the W3C Jigsaw CSS validator with zero errors and one informational warning: CSS custom properties are not checked statically.
+- An earlier stylesheet passed the W3C Jigsaw CSS validator with zero errors and one informational warning: CSS custom properties are not checked statically. After I added styles for the new home-page starting points, the browser loaded the current stylesheet and parsed 117 CSS rules, including the new card styles. My attempt to re-run Jigsaw returned HTTP 500, so the current stylesheet does not yet have a fresh external CSS-validator result.
 
 ## Live-site checks
 
@@ -18,6 +18,7 @@ I checked the live [Netlify site](https://zesty-croissant-e95ed9.netlify.app/) o
 - Internal links on the pages returned successfully. A deliberately nonexistent route returned HTTP 404 and showed the branded not-found page; its Home, FAQ, and How It Works links worked.
 - On all nine routes, the first Tab reached the skip link, its focus was visible, and Enter moved focus to the main content. On the FAQ page, Enter closed and reopened a native disclosure.
 - I captured the current Features page from a local preview at [320px](docs/evidence/features-current-320.png), [390px](docs/evidence/features-current-390.png), [768px](docs/evidence/features-current-768.png), [1024px](docs/evidence/features-current-1024.png), and [1440px](docs/evidence/features-current-1440.png). The local version uses the project files and does not include the injected Netlify badge.
+- I added three question-led starting points to the home page and checked their links to the workflow, compatibility and security pages at 320px, 768px and 1440px. All three destinations loaded and the cards had no horizontal overflow. I saved local screenshots at [320px](docs/evidence/home-starting-points-320.png), [768px](docs/evidence/home-starting-points-768.png), and [1440px](docs/evidence/home-starting-points-1440.png).
 
 ## GitHub and Netlify deployment check
 
