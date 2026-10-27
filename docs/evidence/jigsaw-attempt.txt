@@ -1,0 +1,39 @@
+﻿Jigsaw CSS Validator upload attempt
+Endpoint: https://jigsaw.w3.org/css-validator/validator
+HTTP 200; content-type application/json;charset=utf-8; bytes 889
+
+
+Response excerpt (not a usable CSS validation report if HTML/error):
+{
+  "cssvalidation" : {
+     "uri"       : "style.css",
+     "checkedby" : "http://www.w3.org/2005/07/css-validator",
+     "csslevel"  : "css3",
+     "date"      : "2026-10-24T03:03:02Z",
+     "timestamp" : "1792854182455",
+     "validity"  : true,
+     "result"    : {
+		"errorcount"   : 0,
+		"warningcount" : 2
+                   }
+       ,
+     "warnings"   : [
+      {
+         "source"  : "file://localhost/style.css",
+         "line"    : 36,
+         "message" :  "Due to their dynamic nature, CSS variables are currently not statically checked",
+         "type"    :  "css-variable",
+         "level"   : 0
+      }
+     ,
+      {
+         "source"  : "file://localhost/style.css",
+         "line"    : 95,
+         "message" :  "The property \u201Cclip\u201D is deprecated",
+         "type"    :  "deprecatedproperty",
+         "level"   : 0
+      }
+                     ]
+    }
+}
+

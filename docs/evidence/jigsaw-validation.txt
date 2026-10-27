@@ -1,0 +1,55 @@
+Official Jigsaw CSS Validator response — historical stylesheet
+Status: This successful result is historical only and does not validate the current stylesheet.
+Endpoint: https://jigsaw.w3.org/css-validator/validator
+Submitted file: assets/css/style.css
+SHA-256: EFD0F92ADAEA6762BA9460F4959D11BE698FEC1E6D2E9A9787A8C5D134D83DB5
+Submitted on: 2026-10-24
+HTTP status: 200
+Validator response date: 2026-10-24T03:31:53Z
+CSS level: css3
+Validity: true
+Errors: 0
+Warnings: 0
+
+Exact response fields:
+{
+  "uri": "style.css",
+  "checkedby": "http://www.w3.org/2005/07/css-validator",
+  "csslevel": "css3",
+  "date": "2026-10-24T03:31:53Z",
+  "timestamp": "1792855913274",
+  "validity": true,
+  "errorcount": 0,
+  "warningcount": 0
+}
+
+Previous current-file retry — 2026-10-27
+Submitted file SHA-256: 21B2FBF6E0B8E7F68D8187D573E9E0564D60AB42E550F01EA87418A3C30E0B89
+Endpoint: https://jigsaw.w3.org/css-validator/validator?output=json&profile=css3
+HTTP status: 500
+Exact response: Servlet has thrown exception:java.lang.IllegalStateException: Reader used
+Validity, error count and warning count: no result returned
+
+Previous current-file result — 2026-10-27
+Submitted file SHA-256: 2375C44DB6EA0094641C4244CC8624A2990EDC1F0611C9D396525EBF3C3E1DC1
+Endpoint: https://jigsaw.w3.org/css-validator/validator?output=json
+Submission: multipart/form-data with profile=css3
+HTTP status: 200
+CSS level: CSS 3
+Result shown by validator: “Congratulations! No Error Found.” The document validates as CSS level 3.
+Errors: 0
+Warnings: 1
+Warning: Due to their dynamic nature, CSS variables are currently not statically checked.
+
+Latest current-file result after planner-comparison styling — 2026-10-27
+Submitted file SHA-256: 73BC39D830554C64424C85A35FB1650B2B09DEAA88C4152D1A59ABDD9D084727
+Endpoint: https://jigsaw.w3.org/css-validator/validator?output=json
+Submission: multipart/form-data with profile=css3
+HTTP status: 200
+CSS level: CSS 3
+Result shown by validator: “Congratulations! No Error Found.” The document validates as CSS level 3.
+Errors: 0
+Warnings: 1
+Warning: Due to their dynamic nature, CSS variables are currently not statically checked.
+
+The 2026-10-27 failed attempt, prior current-file result and 2026-10-24 historical success are retained for transparency; the latest result validates the current CSS hash above.

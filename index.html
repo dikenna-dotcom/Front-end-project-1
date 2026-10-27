@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UAR explains how an application compatibility and security review can be structured before execution decisions are made.">
+    <title>UAR | Universal Application Runtime</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="UAR home page">
+          <span class="brand-mark">UAR</span>
+          <span class="brand-text">Universal Application Runtime</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="compatibility.html">Compatibility</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Understanding runtime decisions</p>
+            <h1>Make the application decision clearer before choosing how it should run.</h1>
+            <p class="lead">
+              UAR is a proposed decision model for considering application requirements, environment
+              compatibility and policy before an execution strategy is chosen.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="how-it-works.html">See the workflow</a>
+              <a class="button button-secondary" href="use-cases.html">Explore use cases</a>
+            </div>
+            <ul class="mini-points" aria-label="Key UAR features">
+              <li>Requirements-first evaluation</li>
+              <li>Compatibility and policy checks</li>
+              <li>Clear pass, warning and blocker outcomes</li>
+            </ul>
+          </div>
+
+          <figure class="hero-visual" aria-labelledby="process-caption">
+            <div class="diagram-window">
+              <div class="diagram-header">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="diagram-body">
+                <div class="diagram-block">App request</div>
+                <div class="diagram-arrow">→</div>
+                <div class="diagram-block accent">Compatibility</div>
+                <div class="diagram-arrow">→</div>
+                <div class="diagram-block">Security policy</div>
+                <div class="diagram-arrow">→</div>
+                <div class="diagram-block success">Execution strategy</div>
+              </div>
+            </div>
+            <figcaption id="process-caption" class="visually-hidden">
+              Illustration only: an application request is reviewed for compatibility and security
+              policy before an execution strategy is considered.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Why UAR matters</p>
+            <h2>Not every application should be treated as if it were a universal fit.</h2>
+          </div>
+
+          <div class="card-grid three-up">
+            <article class="info-card">
+              <h3>Clarify intent</h3>
+              <p>
+                The proposed model starts by recording an application’s requirements, the target environment and the rules that matter before an execution path is considered.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Reduce guesswork</h3>
+              <p>
+                A structured review can distinguish a likely match from an uncertain case or a mismatch that needs a different approach.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Record decisions</h3>
+              <p>
+                Recording the rationale makes assumptions visible for later review instead of leaving a decision unexplained.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted">
+        <div class="container two-column">
+          <div>
+            <p class="eyebrow">A clear product boundary</p>
+            <h2>This website explains a model; it does not operate a runtime.</h2>
+            <p>
+              The pages describe a proposed path from requirements to compatibility and policy review. They do not scan a visitor’s device, evaluate uploads or enforce application rules.
+            </p>
+          </div>
+          <div class="note-panel">
+            <h3>What UAR does not claim</h3>
+            <ul class="check-list">
+              <li>It does not run applications on behalf of visitors.</li>
+              <li>It does not guarantee universal compatibility.</li>
+              <li>It does not present fabricated security outcomes as if they were real.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">The path</p>
+            <h2>An illustrative decision sequence</h2>
+          </div>
+
+          <ol class="timeline">
+            <li class="timeline-step">
+              <span class="step-number" aria-hidden="true">1</span>
+              <div>
+                <h3>Understand the request</h3>
+                <p>Describe the application’s needs, the intended environment and the user context.</p>
+              </div>
+            </li>
+            <li class="timeline-step">
+              <span class="step-number" aria-hidden="true">2</span>
+              <div>
+                <h3>Review compatibility</h3>
+                <p>Compare known requirements with the target environment and record uncertainty.</p>
+              </div>
+            </li>
+            <li class="timeline-step">
+              <span class="step-number" aria-hidden="true">3</span>
+              <div>
+                <h3>Consider policy separately</h3>
+                <p>Review security, privacy and operational rules; compatibility alone is not a safety verdict.</p>
+              </div>
+            </li>
+            <li class="timeline-step">
+              <span class="step-number" aria-hidden="true">4</span>
+              <div>
+                <h3>Explain a possible strategy</h3>
+                <p>Document the reasoning and any conditions before a responsible operator chooses what to do.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section section-muted">
+        <div class="container">
+          <div class="section-heading narrow">
+            <p class="eyebrow">Where to begin</p>
+            <h2>Useful next reads</h2>
+          </div>
+          <div class="link-list">
+            <a href="features.html">Review the feature set</a>
+            <a href="how-it-works.html">Read the full workflow</a>
+            <a href="compatibility.html">Check the compatibility model</a>
+            <a href="faq.html">Find quick answers</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-brand">UAR</p>
+          <p>Conceptual runtime planning for compatibility, policy and execution decisions.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="compatibility.html">Compatibility</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>More</h3>
+          <ul>
+            <li><a href="use-cases.html">Use Cases</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

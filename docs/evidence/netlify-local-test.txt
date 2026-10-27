@@ -1,0 +1,26 @@
+Netlify static release-package verification — 27 October 2026
+
+This is the original local check of the static upload folder prepared for Netlify Drop, recorded before the public URL was supplied. It is not the hosted review; see [netlify-live-review.txt](netlify-live-review.txt).
+
+Release package
+- Builder: `python scripts/build_netlify_release.py`
+- Output: `build/netlify/`
+- Contains exactly 11 allowlisted files: eight content pages, `404.html`, `assets/css/style.css` and `assets/js/review-planner.js`.
+- Excludes the Heroku WSGI server, Procfile, Python dependency/version files, documentation, assessment material, visitor notes, wireframes, screenshots and Git history.
+- Each packaged file was compared with its source by SHA-256; all hashes matched. Selected fingerprints:
+  - `features.html`: `BA82B7C0CA9348218598FE7608708B07E71A08703F5E27D9523E26BE4A4D9DAF`
+  - `assets/css/style.css`: `73BC39D830554C64424C85A35FB1650B2B09DEAA88C4152D1A59ABDD9D084727`
+  - `assets/js/review-planner.js`: `5C663C3871A89724E1122A379A330645F43FF86F3D49ED8578BC57EE323896E1`
+  - `404.html`: `36CDBF67B58622CB4508A5301194A9362E64B3BF21C3BF2EB210100905BD85FE`
+
+Local checks
+- Server: `python -m http.server 8765 --bind 127.0.0.1`, run from `build/netlify/`.
+- The root URL, eight content pages, `/404.html`, stylesheet and planner script returned HTTP 200.
+- Browser: VS Code integrated browser; exact user agent and OS are in `testing.md`.
+- Opened nine HTML documents (eight content pages plus `404.html`) at CSS viewport widths 320, 390, 768, 1024 and 1440 pixels: 45 checks total. All had one `main`, one `h1`, no measured horizontal overflow and no page errors.
+- In the current `404.html`, all asset/navigation destinations other than the in-page skip link are root-relative, so they do not depend on the depth of a missing request URL.
+- A matching-value planner submission against the package produced three Pass states and an overall illustrative Pass.
+- An unknown path received Python `http.server`'s generic 404. This does not test Netlify's custom 404 handling; test that only after publishing to the intended host.
+- This `404.html` content changed after the saved Nu result for its prior version. Validation of the current fingerprint remains pending.
+
+This record documents the local package check before the public URL was supplied. The live deployment was subsequently tested; see [netlify-live-review.txt](netlify-live-review.txt). Account ownership, plan usage/billing details and the exact upload history were not inspected.

@@ -1,0 +1,11 @@
+W3C Nu HTML Checker — updated Features page
+
+Endpoint: https://validator.w3.org/nu/?out=json
+Submitted file: features.html
+Submitted on: 2026-10-27
+Submission: HTTP POST, text/html; charset=utf-8
+HTTP status: 200
+Messages: 0
+Submitted file SHA-256: D522D2557E4AAD40CE157085010EC2484CCE5DAD77D86FFF3C0BA385437B9666
+
+This is a current-file result for features.html only. The other seven HTML pages were unchanged from the earlier all-page report in w3c-validation.json.

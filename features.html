@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The key UAR features focus on requirement mapping, compatibility review and clear decision outcomes.">
+    <title>Features | UAR</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="UAR home page">
+          <span class="brand-mark">UAR</span>
+          <span class="brand-text">Universal Application Runtime</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html" aria-current="page">Features</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="compatibility.html">Compatibility</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-shell" tabindex="-1">
+      <section class="page-hero">
+        <div class="container narrow">
+          <p class="eyebrow">Feature set</p>
+          <h1>UAR focuses on understanding fit before execution.</h1>
+          <p class="lead">These are parts of a proposed workflow, not claims about features currently running in this website.</p>
+        </div>
+      </section>
+
+      <div class="section">
+        <div class="container feature-layout">
+          <article class="feature-card">
+            <h2>Requirements</h2>
+            <p>Describe what an application needs and the environment in which it is expected to operate.</p>
+          </article>
+          <article class="feature-card">
+            <h2>Compatibility</h2>
+            <p>Compare known requirements with the target environment and keep unknowns visible.</p>
+          </article>
+          <article class="feature-card">
+            <h2>Policy review</h2>
+            <p>Consider security, privacy and operational rules separately from technical fit.</p>
+          </article>
+          <article class="feature-card">
+            <h2>Decision record</h2>
+            <p>Explain the reasoning, conditions and remaining questions before an operator chooses an execution path.</p>
+          </article>
+        </div>
+      </div>
+
+      <section class="section section-muted" aria-labelledby="example-title">
+        <div class="container">
+          <div class="section-heading narrow">
+            <p class="eyebrow">Static example</p>
+            <h2 id="example-title">A sample comparison using fictional data.</h2>
+            <p>This fixed example shows how a proposed review might present requirements and uncertainty. It does not accept input or assess real software or devices.</p>
+          </div>
+
+          <div class="example-layout">
+            <article class="feature-card">
+              <h3>Sample application requirements</h3>
+              <dl class="example-data">
+                <dt>Supported operating system</dt>
+                <dd>Windows 11</dd>
+                <dt>Minimum memory</dt>
+                <dd>8 GB</dd>
+                <dt>Minimum free storage</dt>
+                <dd>10 GB</dd>
+              </dl>
+            </article>
+            <article class="feature-card">
+              <h3>Hypothetical environment</h3>
+              <dl class="example-data">
+                <dt>Operating system</dt>
+                <dd>Linux</dd>
+                <dt>Available memory</dt>
+                <dd>4 GB</dd>
+                <dt>Available free storage</dt>
+                <dd>20 GB</dd>
+              </dl>
+            </article>
+          </div>
+
+          <h3 class="example-subheading">Illustrative comparison</h3>
+          <div class="decision-list">
+            <article class="decision-card decision-blocker">
+              <h4>Operating system</h4>
+              <p class="decision-status">Blocker</p>
+              <p>The sample environment lists Linux, while the sample application requirement lists Windows 11.</p>
+            </article>
+            <article class="decision-card decision-blocker">
+              <h4>Memory</h4>
+              <p class="decision-status">Blocker</p>
+              <p>The sample environment lists 4 GB, below the sample requirement of 8 GB.</p>
+            </article>
+            <article class="decision-card decision-pass">
+              <h4>Free storage</h4>
+              <p class="decision-status">Pass</p>
+              <p>The sample environment lists 20 GB, above the sample requirement of 10 GB.</p>
+            </article>
+          </div>
+
+          <p class="example-outcome"><strong>Overall illustrative outcome: Blocker.</strong> In this fictional example, the operating-system mismatch and memory shortfall would need human review. These labels are not compatibility, security or safety findings.</p>
+        </div>
+      </section>
+
+      <section class="section section-muted">
+        <div class="container two-column">
+          <div>
+            <p class="eyebrow">Decision labels</p>
+            <h2>Use labels to explain a decision, not to imply a live scan.</h2>
+            <p>The proposed model uses pass, warning and blocker as plain-language categories. They are illustrative labels on this site, not results from an application review.</p>
+          </div>
+          <div class="note-panel">
+            <h3>Status model</h3>
+            <p>Compatibility and safety remain separate questions. The <a href="compatibility.html">compatibility guide</a> explains the labels and their limits.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container narrow">
+          <h2>Continue reading</h2>
+          <p>See the <a href="how-it-works.html">proposed workflow</a>, then visit the <a href="faq.html">FAQ</a> for scope and terminology.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-brand">UAR</p>
+          <p>Conceptual runtime planning for compatibility, policy and execution decisions.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html" aria-current="page">Features</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="compatibility.html">Compatibility</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>More</h3>
+          <ul>
+            <li><a href="use-cases.html">Use Cases</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

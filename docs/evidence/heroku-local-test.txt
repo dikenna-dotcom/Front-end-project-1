@@ -1,0 +1,32 @@
+Heroku release-package verification — 27 October 2026
+
+This is a local test of the freshly rebuilt, allowlist-based release bundle after the comparison-planner changes. It is not a Heroku deployment or a public-host test.
+
+Release
+- Builder: `python scripts\build_heroku_release.py`
+- Output: `build\heroku\`
+- Builder reported 15 copied public runtime files; the rebuilt directory contained exactly 15 files with no `__pycache__`, assessment docs, screenshots, README or source Git history.
+- Runtime: Python 3.12.10, Waitress 3.0.2
+- Local server command: `python -m waitress --listen=127.0.0.1:8766 app:application`
+- Features HTML SHA-256: BA82B7C0CA9348218598FE7608708B07E71A08703F5E27D9523E26BE4A4D9DAF
+- Stylesheet SHA-256: 73BC39D830554C64424C85A35FB1650B2B09DEAA88C4152D1A59ABDD9D084727
+- Planner JavaScript SHA-256: 5C663C3871A89724E1122A379A330645F43FF86F3D49ED8578BC57EE323896E1
+
+HTTP checks on the bundled Waitress server at `http://127.0.0.1:8766/`
+- HTTP 200: `/`, all eight content pages, `/404.html`, `/assets/css/style.css`, `/assets/js/review-planner.js`.
+- MIME types: HTML `text/html; charset=utf-8`; CSS `text/css; charset=utf-8`; JavaScript `text/javascript; charset=utf-8`.
+- A nonexistent path returned HTTP 404 with the branded “Page not found” body.
+- `HEAD /about.html` returned HTTP 200, no response body, and Content-Length 4624.
+- `POST /` returned HTTP 405.
+- `/favicon.ico` returned HTTP 204.
+- `/app.py`, `/Procfile`, `/requirements.txt`, `/.git/config` and `/assets/../app.py` each returned HTTP 404.
+
+Browser checks against the same package
+- Browser: VS Code integrated browser; reported user agent is recorded in `testing.md`.
+- Exact user agent: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.143.1 Chrome/150.0.7871.250 Electron/43.7.7 Safari/537.36`.
+- Opened nine HTML documents (eight content pages plus `404.html`) at each CSS viewport width 320, 390, 768, 1024 and 1440 pixels: 45 route/width checks total.
+- All 45 responses were HTTP 200; each document had exactly one `main` and one `h1`; measured document width did not exceed the viewport; no page errors were recorded.
+- On the bundled `features.html`, browser-side submissions produced the expected Pass, Blocker and Warning outcomes from different entered values. Blank required fields prevented submission; a `<script>`-like value was rendered as text; reset cleared the fields and comparison cards; no page errors occurred. The five-width responsive screenshots and example Pass result are linked in [the evidence index](README.md).
+- The example Pass screenshot was captured from the rebuilt bundle at a requested 1440px CSS viewport: [features-planner-bundle-pass.png](features-planner-bundle-pass.png).
+
+No hosted routes, Heroku logs, public URL, billable app or live custom-404 mapping were tested. Those remain pending account setup, billing confirmation and deployment authorization.

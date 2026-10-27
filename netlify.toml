@@ -1,0 +1,6 @@
+[build]
+  command = "python scripts/build_netlify_release.py"
+  publish = "build/netlify"
+
+[build.environment]
+  PYTHON_VERSION = "3.12"

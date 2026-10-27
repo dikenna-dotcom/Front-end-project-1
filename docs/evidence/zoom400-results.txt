@@ -1,0 +1,36 @@
+Actual browser zoom and reflow test — 27 October 2026
+
+Purpose
+Check all eight local pages at actual 400% browser zoom, including horizontal overflow, navigation availability, vertical reading access, the skip link and native FAQ keyboard interaction.
+
+Conditions
+- Browser: Microsoft Edge 156.0.4314.50
+- OS: Windows 11 Pro 10.0.26300
+- Site: local preview at http://127.0.0.1:8000/
+- Browser profile: isolated local test profile
+- Zoom: browser zoom shortcut used; Edge's saved per-site zoom level was 7.603568, corresponding to a 4.0 zoom factor. Device-pixel ratio was 10 at this setting, compared with 2.5 at the 100% baseline.
+- Effective layout viewport: 253 × 200 CSS pixels. The available browser window could not provide the nominal 320px width at 400%; this narrower viewport is recorded as a limitation.
+- Screenshots: first-viewport captures at actual browser zoom, linked in README.md in this directory. They are not full-page captures.
+
+Results
+
+| Route | CSS content width | Document scroll width | Horizontal overflow | H1 and six primary links | Footer reachable by vertical scroll |
+| --- | ---: | ---: | --- | --- | --- |
+| Home | 253px | 253px | No | Yes | Yes |
+| Features | 253px | 253px | No | Yes | Yes |
+| How It Works | 253px | 253px | No | Yes | Yes |
+| Compatibility | 253px | 253px | No | Yes | Yes |
+| Security | 253px | 253px | No | Yes | Yes |
+| Use Cases | 253px | 253px | No | Yes | Yes |
+| About | 253px | 253px | No | Yes | Yes |
+| FAQ | 253px | 253px | No | Yes | Yes |
+
+Keyboard checks at actual zoom
+- Tab focused the visible skip link.
+- Enter activated it and navigated to #main-content.
+- Subsequent Tab navigation focused the first FAQ summary.
+- Enter collapsed the disclosure; a second Enter reopened it.
+- On the Features planner, the form fit inside the 253px content width: form bounds were x=10px to x=243.7px, and text inputs/buttons were within those bounds. A focused planner screenshot is linked in the evidence index.
+
+Conclusion
+The measured 400% run passed the no-horizontal-overflow and tested keyboard paths at a viewport narrower than the nominal 320px target. Normal vertical scrolling was required and reached the page footers. This result is local-browser evidence only; it is not a screen-reader review, physical-device test, hosted-site test or full-page visual audit.

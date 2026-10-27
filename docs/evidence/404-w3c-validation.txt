@@ -1,0 +1,17 @@
+W3C Nu HTML Checker — custom not-found page
+
+Endpoint: https://validator.w3.org/nu/?out=json
+Submitted file: 404.html
+Submitted on: 2026-10-27
+Submission: HTTP POST, text/html
+HTTP status: 200
+Checker version: vnu 26.10.18
+Messages: 0
+Submitted file SHA-256: CC4A866B9806EC8358FD540D04D26F72F8432116F8C2A425D9ED93F79787BFE8
+
+The first submission reported one heading-level error because the footer headings skipped from h1 to h3. The footer headings were changed to h2 and the page was resubmitted; this zero-message result is the retest.
+
+Latest validation after changing the page's asset and navigation URLs to root-relative paths for static hosting:
+- Resubmitted on 27 October 2026 using an HTML POST body and `out=json`.
+- HTTP status: 200; checker version: vnu 26.10.18; messages: 0.
+- Latest submitted file SHA-256: `36CDBF67B58622CB4508A5301194A9362E64B3BF21C3BF2EB210100905BD85FE`.

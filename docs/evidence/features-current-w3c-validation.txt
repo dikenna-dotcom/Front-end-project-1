@@ -1,0 +1,11 @@
+W3C Nu HTML Checker — Features page with requirements comparison
+
+Endpoint: https://validator.w3.org/nu/?out=json
+Submitted file: features.html
+Submitted on: 27 October 2026
+Submission: HTTP POST, text/html; charset=utf-8
+HTTP status: 200
+Messages: 0
+Submitted file SHA-256: BA82B7C0CA9348218598FE7608708B07E71A08703F5E27D9523E26BE4A4D9DAF
+
+This result validates the current Features-page markup containing the operating-system, memory and storage comparison controls. Earlier Features-page validation results refer to earlier file hashes.

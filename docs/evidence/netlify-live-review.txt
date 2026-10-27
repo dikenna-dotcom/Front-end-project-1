@@ -1,0 +1,29 @@
+Netlify live-site review — 27 October 2026
+
+Published site: https://coruscating-fudge-f55efc.netlify.app/
+Review date: 27 October 2026
+Browser: VS Code integrated browser, user agent `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.143.1 Chrome/150.0.7871.250 Electron/43.7.7 Safari/537.36`.
+
+Deployment parity
+- All eight public routes loaded: `/`, `/features`, `/how-it-works`, `/compatibility`, `/security`, `/use-cases`, `/about` and `/faq`.
+- The visible text from each published page matched the corresponding current workspace HTML when parsed as text.
+- The deployment uses clean URLs (for example `/features`) and rewrites navigation links from the workspace's `.html` paths. Therefore HTML byte hashes are not expected to match.
+- Published `assets/css/style.css` SHA-256: `73BC39D830554C64424C85A35FB1650B2B09DEAA88C4152D1A59ABDD9D084727`; it matches the current workspace CSS.
+- Published `assets/js/review-planner.js` SHA-256: `5C663C3871A89724E1122A379A330645F43FF86F3D49ED8578BC57EE323896E1`; it matches the current workspace JavaScript.
+- The shared CSS preserves the visual design system; the site has no raster-image assets. The Home page's labelled HTML/CSS diagram and the Features comparison layout are present.
+- Across eight routes at CSS viewport widths 320, 390, 768, 1024 and 1440 pixels (40 checks), every response was HTTP 200; each page had one `main`, one `h1`, all six primary navigation links visible, and `scrollWidth <= clientWidth`. No browser page errors were recorded during those checks.
+- Audited 157 published internal links across the eight pages; no missing routes or fragments were found. No external website links were present.
+
+Published feature checks
+- Features planner Pass case: Windows supported/target; 4 GB required and 8 GB available memory; 5 GB required and 20 GB available storage. All three comparisons and the combined illustrative outcome were Pass.
+- Blocker case: stated Windows/macOS mismatch and 8 GB required/4 GB available memory produced Blocker for those dimensions and an overall Blocker; storage passed.
+- Warning case: unlisted target operating system and missing memory requirement produced Warning for those dimensions and an overall Warning; storage passed.
+- Reset cleared the form and result cards. The results heading received focus after submission. No JavaScript page errors occurred during planner checks.
+- FAQ page: 11 native disclosures; four were open initially. The first disclosure was clicked closed and reopened successfully.
+
+Hosted not-found check
+- Requested `/check/deep/not-found?audit=2`; Netlify returned HTTP 404 and rendered the branded not-found page.
+- The stylesheet loaded from `/assets/css/style.css`; the Home, FAQ and workflow links used root-relative routes. The direct Home link was followed successfully to `/`.
+- This verifies the actual live error page and its routing. It does not imply automatic redirection: the page presents links for the visitor to choose.
+
+Genuine browser captures of the live Features planner and nested not-found page are `netlify-live-features-pass.png` and `netlify-live-404.png`. The test values are hypothetical and the planner outcomes are not verified compatibility or safety assessments.

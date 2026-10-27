@@ -1,0 +1,21 @@
+Selected contrast calculations for the local stylesheet
+Reviewed: 24 October 2026
+
+Method: WCAG relative-luminance contrast ratio, calculated from the authored hex
+foreground and background values in assets/css/style.css. Ratios are rounded to
+two decimal places. The 4.5:1 normal-text threshold is shown for comparison.
+These selected colour-pair checks are not a complete WCAG audit.
+
+Foreground / purpose                 Background                 Ratio
+Body text #0f172a                     Page #f8fafc                17.06:1
+Supporting text #475569               Page #f8fafc                 7.24:1
+Primary link #1d4ed8                   Page #f8fafc                 6.41:1
+Primary link #1d4ed8                   White panel #ffffff          6.70:1
+White primary-button text #ffffff     Primary #1d4ed8              6.70:1
+Current-navigation text #1e3a8a       Panel #eef4ff                 9.38:1
+Footer text #e2e8f0                   Footer #0f172a               14.48:1
+Green outcome text #166534            Green panel #dcfce7            6.49:1
+Primary focus outline #1d4ed8         White #ffffff                 6.70:1
+
+Every listed pair exceeds 4.5:1. This does not cover every state, gradient,
+component, browser rendering, image, or user-selected colour scheme.

@@ -1,0 +1,20 @@
+Local not-found page and link audit — 27 October 2026
+
+Conditions
+- Local preview: Python 3.12.10 `http.server` at http://127.0.0.1:8000/
+- Browser: VS Code integrated browser, VS Code 1.143.1, Chromium 150.0.7871.250, Electron 43.7.7
+- Test date: 27 October 2026
+
+Results
+- All eight content pages and `404.html` loaded directly with HTTP 200.
+- Each document had one `main` landmark and one H1.
+- 168 local links were checked across the nine HTML files. No target files or fragments were missing.
+- No external website links were found; external-link new-tab behavior was not applicable.
+- No horizontal document overflow was measured across the nine routes at the browser's default viewport.
+- `404.html` was checked at requested viewport widths of 320, 390, 768, 1024 and 1440 CSS pixels. It retained its heading and four visible links to Home, and `scrollWidth` equalled the effective document client width at each width (the browser's effective content widths were 305, 375, 753, 1024 and 1425 pixels).
+- The `404.html` document itself returned HTTP 200 when opened directly.
+- At 320px requested width, the Home CTA labelled “Go to the UAR home page” navigated to `index.html`; its response was HTTP 200. No page errors were raised during this interaction.
+- A nonexistent path returned HTTP 404 from Python's simple static server, but the server displayed its generic error response rather than the site's `404.html`.
+
+Limitations
+This confirms the custom error document and its local links/layout, not host routing. Python's simple static server does not map missing paths to `404.html`; GitHub Pages or another intended host must be tested after deployment approval. The page offers a direct Home link instead of automatically redirecting, so confirm whether the official M(iv) wording requires an automatic redirect. No hosted 404 result is claimed.
