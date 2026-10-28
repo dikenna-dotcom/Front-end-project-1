@@ -28,7 +28,7 @@ I use **Pass**, **Fail**, **Blocked**, or **Pending** for each result. If I ask 
 | Reflow / 200% zoom equivalent | Review all routes at the effective 640 CSS-pixel viewport used by 200% zoom on a 1280px-wide display. Check ordinary content, navigation and comparison fields for clipping or two-dimensional scrolling. | Pass in the local browser release — all nine routes reflowed at 640 CSS px with no horizontal overflow or overlapping/out-of-bounds navigation. This was a 640px viewport check; a fresh physical browser zoom test is still useful. |
 | Physical mobile device | Review all pages and operate the comparison on a phone in portrait and landscape. Record device and browser versions. | Pending for the interactive release. The earlier user-reported iPhone 16/Chrome check predates this form and did not record versions, orientation or route-by-route actions. |
 | Screen-reader review | Use a screen reader and browser to review the comparison labels, descriptions, validation feedback, result announcement, landmarks, headings, navigation and FAQ state. Record exact versions and routes. | Pending for the interactive release. The earlier user-reported iOS screen-reader check predates this form and did not record exact versions, routes or actions. |
-| Published Netlify version | Confirm the new release is live, then check every route, the form script, results, errors and responsive behavior. | Pending — the changes are local and have not yet been confirmed on [the Netlify site](https://uar-project.netlify.app/). The deploy commit must be checked after publishing. |
+| Published Netlify version | Confirm the new release is live, then check every route, the form script, results, errors and responsive behavior. | Pass on 28 October 2026 after commit `2961772` was pushed — all nine page routes, CSS and JavaScript returned HTTP 200; an unknown route returned HTTP 404; the live fictional comparison returned two Blockers and one Pass; at 320 CSS px there was no horizontal overflow. Netlify dashboard deploy-commit confirmation remains outstanding. |
 | First-time visitor task | Ask a first-time visitor to explain the site's purpose, try the comparison, and describe what its results do and do not mean. | Pending for the interactive release. One visitor gave useful feedback on the previous static version; that feedback does not test the current form. |
 
 ## Validation and release checks
@@ -37,7 +37,7 @@ I use **Pass**, **Fail**, **Blocked**, or **Pending** for each result. If I ask 
 - JavaScript syntax: `node --check assets/js/compatibility-comparison.js` passed.
 - Netlify release build: `python scripts/build_netlify_release.py` succeeded and copied the nine HTML pages, stylesheet and comparison script (11 files).
 - W3C Jigsaw: the updated CSS submission returned HTTP 500, so I do not have a fresh external CSS validation result.
-- Earlier Features screenshots in [the evidence folder](evidence/README.md) show the former fixed example, not the current interactive comparison.
+- Current local screenshots and earlier Features captures are identified by version in [the evidence folder](evidence/README.md).
 
 ## Earlier test notes
 

@@ -47,13 +47,21 @@ These are focused browser checks, not a complete accessibility audit or a physic
 
 ## Netlify and visitor feedback
 
-The current interactive change has not yet been verified on [the Netlify site](https://uar-project.netlify.app/). After publishing, I need to check the Netlify deploy commit and repeat the route, form, responsive and error checks against the live release. The floating Netlify badge remains enabled; it is injected outside my source HTML and CSS.
+After pushing commit `2961772`, I checked the published [Netlify site](https://uar-project.netlify.app/) on 28 October 2026.
+
+- The nine page routes returned HTTP 200 with their expected titles; the stylesheet and comparison script also returned HTTP 200.
+- An unknown route returned HTTP 404 and showed the branded not-found page. The explicit `/404.html` page returned HTTP 200 as expected.
+- In the browser, the Features form loaded, the fictional example returned two Blockers and one Pass, and the result included the disclaimer that it is not a real-world assessment.
+- At a 320 CSS-pixel viewport, the Features page had no horizontal overflow and the comparison form remained visible.
+- I could not access the Netlify dashboard to confirm which commit it lists as deployed. The tested site content matches the release I pushed, but I do not claim a dashboard-verified deploy commit.
+
+The floating Netlify badge remains enabled; it is injected outside my source HTML and CSS.
 
 On 27 October 2026, one first-time visitor reviewed the earlier static version. They understood UAR as a concept for considering whether an application might work in an environment and knew that the example was not an actual device or application assessment. This is one formative test, not a broad user study, and it does not test the current form.
 
 ## Checks still open
 
-1. After publishing, confirm the deploy commit in Netlify and repeat the route, form, responsive and error checks on the live site.
+1. If dashboard access is available, confirm the deploy commit listed in Netlify; the live pages, assets, comparison example and 320px layout have already been checked.
 2. Test the new comparison with VoiceOver or another screen reader and record exact versions, routes and actions. The prior user-reported iPhone and iOS screen-reader checks were on an earlier version.
 3. Ask a first-time visitor to use the comparison and explain the meaning and limits of its result; the previous feedback predates this interaction.
 4. Retry W3C Jigsaw when its service is available. The current CSS has not received a fresh external validation result.

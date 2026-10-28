@@ -77,7 +77,9 @@ I built the Netlify release and checked that it contains the nine HTML pages, st
 
 I tested the local release build of the interactive version on 28 October 2026. All nine routes were checked at 320px, 390px, 768px, 1024px and 1440px (45 checks), with no horizontal overflow. At 640 CSS pixels, every route reflowed without overflow or overlapping navigation. I tested the comparison's example, matching, missing-value, no-OS-specific-requirement, invalid-value and reset behavior. I also checked keyboard access, the no-JavaScript fallback, and that editing values clears an old result. Full details and checks still open are in [testing.md](testing.md) and the [manual test sheet](docs/manual-test-sheet.md).
 
-I captured clean Features-page screenshots from a local preview at [320px](docs/evidence/features-current-320.png), [390px](docs/evidence/features-current-390.png), [768px](docs/evidence/features-current-768.png), [1024px](docs/evidence/features-current-1024.png), and [1440px](docs/evidence/features-current-1440.png). I used a local preview because the live site has a floating Netlify badge that is not part of my HTML or CSS and appears over page content. The badge remains on the live site; I have not changed Netlify settings.
+After pushing the changes, I checked the published site on 28 October 2026. All nine page routes and the CSS and JavaScript files returned HTTP 200; an unknown route returned HTTP 404 and showed the branded not-found page. I ran the fictional comparison on the live Features page and confirmed its three results, then checked that the form fitted a 320px CSS viewport without horizontal overflow. Netlify's dashboard was not available to me, so I could not confirm the deployment commit shown there.
+
+I captured the current local Features page with the fictional result at [320px](docs/evidence/features-interactive-320.png) and [1440px](docs/evidence/features-interactive-1440.png). Earlier local captures at [320px](docs/evidence/features-current-320.png), [390px](docs/evidence/features-current-390.png), [768px](docs/evidence/features-current-768.png), [1024px](docs/evidence/features-current-1024.png), and [1440px](docs/evidence/features-current-1440.png) show the former fixed example before I added the comparison. The floating Netlify badge appears on the published site; it is not part of my HTML or CSS, and I have not changed Netlify settings.
 
 I asked one first-time visitor to explain the site and its Features example. They understood UAR as a concept for considering whether an application might suit an environment, and understood that the example was not a real assessment. They also found the site straightforward to navigate. This is useful formative feedback, not a broad user study. I received user-reported results for an iPhone 16/Chrome check and an iOS VoiceOver check with no concerns, but the exact versions, routes, orientation, and actions were not recorded. Earlier screenshots and notes refer to previous versions and are kept only as historical records. More detail is in [testing.md](testing.md), the [manual test sheet](docs/manual-test-sheet.md), and the [evidence index](docs/evidence/README.md).
 
@@ -93,7 +95,7 @@ python scripts/build_netlify_release.py
 
 The release script copies only the site pages, stylesheet and comparison script. It leaves out the project notes and evidence.
 
-The current Netlify site has not yet been checked against this interactive update. After I push the change, I need to confirm that the new release includes `assets/js/compatibility-comparison.js` and retest the live form. I never put passwords or access tokens in the project.
+The source changes are on `main` at commit `2961772`. I confirmed that the published site serves the comparison and its script and tested the live example, but I could not confirm the deploy commit in the Netlify dashboard. I never put passwords or access tokens in the project.
 
 ## Project boundaries
 
