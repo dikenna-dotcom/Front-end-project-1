@@ -2,7 +2,7 @@
 
 ## Timing and purpose
 
-I made these 24 SVGs as layout references after I had already built the first version of the pages. The original set was reconstructed on 24 October 2026. I updated the three Features drawings on 27 October 2026 to show the current fixed example with fictional information. They are not original wireframes made before coding.
+I made these 24 SVGs as layout references after I had already built the first version of the pages. The original set was reconstructed on 24 October 2026. I updated the three Features drawings on 27 October 2026 to show a fixed example with fictional information. They are not original wireframes made before coding.
 
 Each page has a mobile (320px), tablet (768px), and desktop (1440px) drawing. I used them to show the rough page structure and reading order, not the finished styling or every line of copy.
 
@@ -21,8 +21,8 @@ Each page has a mobile (320px), tablet (768px), and desktop (1440px) drawing. I 
 
 ## Current project scope
 
-The project is a static information site. In the Features drawings, I show the review-area cards, fixed fictional requirements, a hypothetical environment, and example comparison labels. There is no form or visitor-generated result.
+The project is an information-led site with an interactive browser-only comparison on the Features page. These drawings predate that form: they show the review-area cards and fixed fictional comparison, not the current visitor inputs or generated result.
 
 In the current CSS, the feature and example cards stack at 840px and below. The homepage diagram stacks below 1180px. The six main navigation links stay visible and wrap on narrower screens.
 
-I did not redraw the other page wireframes when I changed the Features page to a static example. Before using any of these drawings as current visual evidence, compare them with the live pages. I explain the design choices in [design-decisions.md](../design-decisions.md).
+I have not redrawn the Features wireframes to include the new comparison form. Treat them as retrospective layout references, not current visual evidence. I explain the design choices in [design-decisions.md](../design-decisions.md).

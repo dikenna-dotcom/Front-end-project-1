@@ -6,9 +6,18 @@ Most screenshots and text records here were made before I changed the project to
 
 I have summarized the checks for the current release in [testing.md](../../testing.md). The manual checks I still need to do are in [the test sheet](../manual-test-sheet.md).
 
-## Current Features screenshots
+## Current interactive comparison screenshots
 
-I captured the current Features page from a local preview on 27 October 2026 at browser viewport widths of 320px, 390px, 768px, 1024px, and 1440px. These are full-page browser captures of the static example:
+I captured the local interactive release on 28 October 2026 after loading the fictional example and running the comparison. The result is illustrative only; these images do not show a real application or device assessment.
+
+| CSS viewport | Screenshot |
+|---|---|
+| 320px | [features-interactive-320.png](features-interactive-320.png) |
+| 1440px | [features-interactive-1440.png](features-interactive-1440.png) |
+
+## Earlier static Features screenshots
+
+I captured the Features page from a local preview on 27 October 2026 at browser viewport widths of 320px, 390px, 768px, 1024px, and 1440px. These full-page browser captures show the static example before I added the interactive comparison; they are not evidence of the current form:
 
 | Viewport | Screenshot |
 |---|---|
@@ -22,9 +31,9 @@ I used a local preview so the floating Netlify badge, which is injected outside 
 
 I also checked all nine routes in Microsoft Edge 156.0.4314.50 at 200% browser zoom. The resulting CSS viewport was 640px wide. The navigation remained inside the viewport, with no overlap or horizontal overflow. Here is the full-page Features capture: [features-zoom-200.png](features-zoom-200.png).
 
-## Current home-page starting points
+## Earlier home-page starting points
 
-After adding question-led starting points to the home page, I captured the local page at three viewport widths to show how the cards reflow:
+After adding question-led starting points to the home page, I captured the local page at three viewport widths to show how the cards reflow. These captures predate the current comparison link:
 
 | Viewport | Screenshot |
 |---|---|

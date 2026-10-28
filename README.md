@@ -4,11 +4,21 @@
 
 ## Project overview
 
-For this milestone, I built a static website to explain the idea behind Universal Application Runtime (UAR). I wanted someone who had never heard of UAR to be able to understand the proposal, follow the suggested review process, and see what this website can and cannot tell them.
+For this milestone, I built an information-led website to explain the idea behind Universal Application Runtime (UAR). I wanted someone who had never heard of UAR to understand the proposal, follow the suggested review process, and try a small comparison using their own example values.
 
-The site presents information; it is not the UAR product. It does not run applications, inspect devices, accept user input, or make real compatibility or safety decisions. The example on the Features page uses fictional information and is there to show how a comparison might be explained.
+The site presents the UAR concept; it is not the UAR product. Its Features page includes an interactive, browser-only comparison of application requirements and environment values entered by the visitor. It does not run applications, inspect devices, analyse files, or make real compatibility, security or safety decisions. The result only reflects the information entered and is not saved or sent to a server.
 
-This fits the milestone purpose of presenting static data in a useful way: visitors can learn about the concept, while the site gives a clear and honest introduction to the idea.
+The informational pages keep the project grounded in the brief's goal of presenting useful static information. The comparison adds a practical way to explore that information while keeping the product's real-world limits clear.
+
+## Target audience and user goals
+
+I designed the site for people who need to understand an application's stated requirements before considering an environment, including learners, application users and support staff. I want a first-time visitor to be able to:
+
+- understand what the UAR proposal is and what this website cannot do;
+- compare a few known application requirements with values for a hypothetical environment;
+- see which details are missing or conflict, and know that a human review is still needed.
+
+The comparison is a small educational tool for those goals, not a recommendation to install or run an application.
 
 ## UX and design
 
@@ -29,7 +39,7 @@ I included skip links, semantic page landmarks, visible keyboard focus, clear he
 | Page | What I included |
 |---|---|
 | [Home](index.html) | The UAR idea, the limits of this website, and links to the main topics |
-| [Features](features.html) | Four proposed review areas and a fixed comparison using fictional data |
+| [Features](features.html) | Four proposed review areas, a browser-only comparison tool, and a fixed fictional example |
 | [How It Works](how-it-works.html) | Five ordered stages in the proposed process |
 | [Compatibility](compatibility.html) | Explanations of the illustrative Pass, Warning, and Blocker labels |
 | [Security](security.html) | Security, privacy, and policy questions, kept separate from technical compatibility |
@@ -38,17 +48,18 @@ I included skip links, semantic page landmarks, visible keyboard focus, clear he
 | [FAQ](faq.html) | Answers to common questions and a glossary |
 | [404](404.html) | A branded page for visitors who follow a missing link |
 
-The project also includes 24 SVG wireframes. I reconstructed them after the initial pages were implemented, so they are useful layout references, but they are not original pre-coding plans. I updated the three Features wireframes to show the current static example.
+The project also includes 24 SVG wireframes. I reconstructed them after the initial pages were implemented, so they are useful layout references, but they are not original pre-coding plans. They predate the current comparison form and should be treated as earlier layout evidence, not a match for the current Features page.
 
 ## Technologies
 
 1. **HTML5** — page content, navigation, headings, and page structure.
 2. **CSS3** — responsive layouts, typography, colours, and the homepage illustration.
-3. **Python 3 standard library** — builds the small Netlify publish folder; it does not run the published website.
-4. **Git and GitHub** — version history and source repository.
-5. **Netlify** — static hosting.
+3. **JavaScript** — validates the entered resource values and renders the comparison in the browser; it has no server or network dependency.
+4. **Python 3 standard library** — builds the Netlify publish folder; it does not run the published website.
+5. **Git and GitHub** — version history and source repository.
+6. **Netlify** — static hosting.
 
-The published pages use HTML and CSS only. There is no JavaScript, framework, backend, third-party UI library, or externally hosted font.
+The pages are served as static files. The Features comparison is the only project JavaScript; there is no framework, backend, third-party UI library, or externally hosted font.
 
 ## Running it on my computer
 
@@ -62,9 +73,9 @@ Then I open [http://localhost:8000/](http://localhost:8000/). I press `Ctrl+C` i
 
 ## Testing
 
-I built the Netlify release and checked that it contains the nine HTML pages and stylesheet, with no forms, scripts, or project documentation. The W3C Nu checker reported no messages for any of the nine source HTML files. An earlier stylesheet passed the W3C Jigsaw CSS validator with no errors and one informational warning about custom properties. After the recent CSS update, the browser loaded the stylesheet and parsed the new rules, but a fresh Jigsaw request returned HTTP 500, so I cannot claim a new validator result for the current stylesheet.
+I built the Netlify release and checked that it contains the nine HTML pages, stylesheet and comparison script, with no project documentation. On 28 October 2026, the W3C Nu checker returned zero messages for all nine HTML pages, and `node --check assets/js/compatibility-comparison.js` passed. The updated CSS loaded in the browser, but the Jigsaw service returned HTTP 500 when I tried to validate it, so I cannot claim a fresh CSS validator result.
 
-The earlier live-site checks were run on [the previous Netlify site](https://zesty-croissant-e95ed9.netlify.app/). On 27 October 2026, I repeated the layout checks on [the current site](https://uar-project.netlify.app/): all nine routes (the eight content pages and `404.html`) were checked at 320px, 390px, 768px, 1024px, and 1440px. The stylesheet and main content were present, and I found no horizontal overflow. I also checked all nine routes at 200% browser zoom, which gave a 640 CSS-pixel viewport; the navigation stayed within the viewport without overlapping, and I found no horizontal overflow. On each route, the first Tab reached the visibly focused skip link and Enter moved focus to the main content. Forward Tab reached the visible site-authored controls, and the FAQ disclosure closed and reopened with Enter. This was a focused keyboard check, not a complete accessibility audit.
+I tested the local release build of the interactive version on 28 October 2026. All nine routes were checked at 320px, 390px, 768px, 1024px and 1440px (45 checks), with no horizontal overflow. At 640 CSS pixels, every route reflowed without overflow or overlapping navigation. I tested the comparison's example, matching, missing-value, no-OS-specific-requirement, invalid-value and reset behavior. I also checked keyboard access, the no-JavaScript fallback, and that editing values clears an old result. Full details and checks still open are in [testing.md](testing.md) and the [manual test sheet](docs/manual-test-sheet.md).
 
 I captured clean Features-page screenshots from a local preview at [320px](docs/evidence/features-current-320.png), [390px](docs/evidence/features-current-390.png), [768px](docs/evidence/features-current-768.png), [1024px](docs/evidence/features-current-1024.png), and [1440px](docs/evidence/features-current-1440.png). I used a local preview because the live site has a floating Netlify badge that is not part of my HTML or CSS and appears over page content. The badge remains on the live site; I have not changed Netlify settings.
 
@@ -80,17 +91,17 @@ Netlify reads [netlify.toml](netlify.toml), runs the release script, and publish
 python scripts/build_netlify_release.py
 ```
 
-The release script copies only the site pages and stylesheet. It leaves out the project notes and evidence.
+The release script copies only the site pages, stylesheet and comparison script. It leaves out the project notes and evidence.
 
-The new Netlify site serves the updated homepage and navigation routes. The deployed stylesheet text matches my local source after normalizing Windows and web line endings; its starting-point styles are present. I have not checked the Netlify dashboard to confirm which commit was deployed. I never put passwords or access tokens in the project.
+The current Netlify site has not yet been checked against this interactive update. After I push the change, I need to confirm that the new release includes `assets/js/compatibility-comparison.js` and retest the live form. I never put passwords or access tokens in the project.
 
-## A note about the assessment brief
+## Project boundaries
 
-I have followed the static-information purpose for this project. An earlier brief in the workspace describes a different, interaction-based assessment that requires JavaScript. This version does not meet those interaction-specific requirements. If that is the brief being assessed, I need to check with my course provider which requirement takes priority before submitting.
+The comparison only checks three values supplied by the visitor: operating system, memory and free storage. Missing information is shown as a warning; an entered mismatch is shown as a blocker. It does not discover a device's specifications, validate application requirements, run the application, or review security and policy. A real decision needs trustworthy evidence and human review.
 
 ## Credits
 
 - I based the UAR concept and its scope on the project brief supplied to me. I did not inspect a separate UAR runtime repository, so I have not claimed that the runtime exists or works.
 - I looked at public Code Institute milestone examples for general ideas about README structure, user stories, and organising CSS. I did not reuse their code, wording, or assets. I recorded the sources and limits in [docs/research.md](docs/research.md).
-- I wrote the HTML and CSS for this site and made the diagram for it. I have not included downloaded media, third-party UI libraries, or external fonts.
+- I wrote the HTML, CSS and JavaScript for this site and made the diagram for it. I have not included downloaded media, third-party UI libraries, or external fonts.
 - I used AI assistance while developing the project and writing some of the documentation.

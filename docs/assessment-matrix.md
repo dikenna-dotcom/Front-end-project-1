@@ -1,28 +1,34 @@
-# How this project fits the milestone
+# How this project fits the assessment guidance
 
-## Scope
+I use this matrix to connect the supplied pass, merit and distinction characteristics to the project and its evidence. It is an evidence map, not an assessor's grade or a promise of a particular result.
 
-I used the project purpose supplied for this milestone to check whether the site is doing what it is meant to do: present static information that helps visitors and supports the owner's goal. This is my evidence map, not an assessor's grade or a replacement for the full course rubric.
+## Purpose and audience
 
-There is a possible mismatch I need to flag. An earlier document in the workspace quoted a different assessment extract for an interactive front-end unit, including significant JavaScript interaction. My current project follows the static-site direction and intentionally has no project JavaScript. If the interactive-unit extract is the one I am being assessed against, this version does not meet those interaction requirements. I should confirm which brief applies with my course provider.
+The site introduces the Universal Application Runtime (UAR) as a proposal to people learning about application requirements and environment compatibility. Its likely visitors include application users, learners and support staff who want to understand which requirements are known, which are missing, and which questions need human review.
 
-## Project-purpose mapping
+The informational pages explain the idea and its limitations. The Features page lets visitors compare manually entered operating-system, memory and storage values. The interaction demonstrates a limited, understandable comparison; it is not the UAR product and does not verify a real application or device.
 
-| Project purpose | What I have done | Evidence / status |
+## Evidence against the supplied characteristics
+
+| Characteristic | Project evidence | Status and remaining evidence |
 |---|---|---|
-| Present static data in a useful way | Eight connected informational pages explain the UAR concept, proposed review process, compatibility terminology, security boundaries, hypothetical examples, and common questions. The Features page includes one fixed comparison using explicitly fictional data. | Implemented in the HTML pages. The comparison does not accept or generate visitor input. |
-| Help users achieve a goal | Visitors can learn what UAR proposes, follow its process, interpret illustrative labels, and find related examples and definitions. Shared navigation, page headings, contextual links, and a responsive layout support those tasks. | Browser checks cover five widths from 320px to 1440px and 200% zoom on all nine routes. One first-time visitor correctly described the site's purpose and understood that the Features example was not a real assessment. This is useful formative feedback, but broader independent user testing remains limited. |
-| Advance the site owner's goal | The site explains the proposed idea while clearly stating that this website is not a working runtime and does not assess applications or devices. | Scope boundaries appear on the home, Features, Security, About, Compatibility, and FAQ pages. |
-| Build and publish a static front end | HTML and CSS are packaged by the standard-library release script. Netlify publishes the generated folder from the GitHub repository. | The local build is verified. The updated homepage and routes are live at [uar-project.netlify.app](https://uar-project.netlify.app/). Route checks, 45 responsive layout checks, a 200% zoom check, and focused keyboard checks passed. The stylesheet text matches the local source after line-ending normalization. I have not confirmed the deployed commit in the Netlify dashboard, and this is not a full accessibility audit. |
+| Clear purpose for a real audience | The home page describes the proposal and links to the workflow, use cases and interactive comparison. The first-time visitor feedback records that one visitor understood the site's purpose and that the earlier fixed example was illustrative. | The purpose and audience are stated. The interactive version needs a fresh first-time visitor task to test whether its comparison and limits are understood without coaching. |
+| Working interaction | The Features form compares operating system, minimum memory and free storage. It includes a fictional preset, a clear action, reset behavior, result labels and warnings for unknown values. | Implemented in browser JavaScript. Re-run the functional cases in the current browser and record results before treating the test record as complete. |
+| Honest, defensive behavior | The comparison only reads values entered into labelled fields. Numeric controls restrict values to 0–1024 GB; missing values produce warnings; entered mismatches produce blockers. Results are built as text nodes, not interpreted as HTML. | The interface states that it does not inspect devices, run apps, assess security or save/send entries. Boundary and malformed-input cases need retesting. |
+| UX and accessibility | Shared navigation, semantic page sections, responsive CSS, keyboard focus, a skip link, labelled controls, native validation, live result announcement, and FAQ disclosures support use. | Earlier responsive and focused keyboard checks passed before this interaction was added. Recheck all routes and the form at narrow widths, 200% zoom, keyboard-only use and with assistive technology. |
+| Responsive implementation | CSS Grid, Flexbox and media queries adapt the shared layouts and comparison form. | The previous release was checked at 320px, 390px, 768px, 1024px, 1440px and at 200% zoom. Capture fresh evidence for the interactive release. |
+| Readable, organised code | HTML, CSS, browser JavaScript and the Python release script are separated by purpose. No framework, external library, backend or package install is required. | Inspect the changed files, validate HTML/CSS, run JavaScript syntax checks, and confirm the release includes the form script. |
+| Development lifecycle and version control | Git history separates the static-site change, later UX refinements and the current interaction. Project notes explain the design boundaries and release process. | Keep this feature in its own descriptive commit and record tests, defects and retests. The wireframes were reconstructed after implementation and are not original design-stage evidence. |
+| Publishing and end testing | Netlify publishes the generated static-file folder from GitHub. | Rebuild and inspect the release locally, then confirm the live site contains the same script and rerun the comparison after deployment. The Netlify dashboard's deployed commit has not been independently confirmed. |
 
-## What this evidence does and does not show
+## What this interaction does and does not prove
 
-- I describe UAR as a proposal; this website does not verify whether a separate product is operating.
-- The sample requirements, environments, use cases, and outcomes are fictional.
-- Some screenshots, test notes, validator responses, and the first Netlify review come from earlier versions. I do not treat them as proof that the current pages passed those checks.
-- I made the wireframes after implementation. They show layout ideas, not a pre-coding design process.
-- The [GitHub repository](https://github.com/dikenna-dotcom/Front-end-project-1) and [current Netlify site](https://uar-project.netlify.app/) are available. The deployment was checked across routes and viewport sizes, but I have not verified the deployed commit or completed a full accessibility review.
+- The comparison checks user-entered values only; it does not inspect a computer or verify the source or accuracy of those values.
+- A Pass means the entered values meet the simple comparison rule. It is not a promise that software will install, run, perform correctly or be safe.
+- Security, privacy, policy and execution decisions remain outside the comparison and require appropriate evidence and human review.
+- The project demonstrates a browser interaction, not a fully implemented or verified UAR runtime.
+- The previous visitor feedback, screenshots, validation records and deployment checks predate this change unless they are explicitly recorded as current retests.
 
-## Earlier assessment notes
+## Design and process evidence
 
-I removed the detailed pass, merit, and distinction tables from the earlier matrix because they came from the separate interactive-unit extract, not the static-information purpose I am following here. I have not assumed which document is the final rubric. If there is still uncertainty, I will ask the course provider before submission.
+The [design decisions](design-decisions.md) explain the intended audience, information structure, interaction scope, privacy boundary and responsive/accessibility choices. The [content register](content-register.md) tracks claims and the evidence behind them. The [manual test sheet](manual-test-sheet.md) records planned and completed checks. The [evidence index](evidence/README.md) distinguishes current evidence from earlier screenshots and notes.
