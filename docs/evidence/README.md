@@ -14,6 +14,7 @@ I captured the local interactive release on 28 October 2026 after loading the fi
 |---|---|
 | 320px | [features-interactive-320.png](features-interactive-320.png) |
 | 1440px | [features-interactive-1440.png](features-interactive-1440.png) |
+| 640px at 200% browser zoom on a 1280px display | [features-interactive-live-zoom-200.png](features-interactive-live-zoom-200.png) |
 
 ## Earlier static Features screenshots
 

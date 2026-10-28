@@ -47,13 +47,14 @@ These are focused browser checks, not a complete accessibility audit or a physic
 
 ## Netlify and visitor feedback
 
-After pushing commit `2961772`, I checked the published [Netlify site](https://uar-project.netlify.app/) on 28 October 2026.
+After pushing commit `f381702`, I checked the published [Netlify site](https://uar-project.netlify.app/) on 28 October 2026.
 
 - The nine page routes returned HTTP 200 with their expected titles; the stylesheet and comparison script also returned HTTP 200.
 - An unknown route returned HTTP 404 and showed the branded not-found page. The explicit `/404.html` page returned HTTP 200 as expected.
 - In the browser, the Features form loaded, the fictional example returned two Blockers and one Pass, and the result included the disclaimer that it is not a real-world assessment.
 - At a 320 CSS-pixel viewport, the Features page had no horizontal overflow and the comparison form remained visible.
-- I could not access the Netlify dashboard to confirm which commit it lists as deployed. The tested site content matches the release I pushed, but I do not claim a dashboard-verified deploy commit.
+- I compared all nine live HTML pages with the GitHub files at `f381702`, allowing for Netlify's injected badge comment and its clean-URL link rewrites. The page structure, content and remaining attributes matched. The deployed stylesheet and comparison script matched the same commit exactly.
+- The live content therefore matches the latest GitHub source commit. I could not access the Netlify dashboard to independently check its deploy record.
 
 The floating Netlify badge remains enabled; it is injected outside my source HTML and CSS.
 
@@ -61,10 +62,9 @@ On 27 October 2026, one first-time visitor reviewed the earlier static version. 
 
 ## Checks still open
 
-1. If dashboard access is available, confirm the deploy commit listed in Netlify; the live pages, assets, comparison example and 320px layout have already been checked.
-2. Test the new comparison with VoiceOver or another screen reader and record exact versions, routes and actions. The prior user-reported iPhone and iOS screen-reader checks were on an earlier version.
-3. Ask a first-time visitor to use the comparison and explain the meaning and limits of its result; the previous feedback predates this interaction.
-4. Retry W3C Jigsaw when its service is available. The current CSS has not received a fresh external validation result.
-5. A larger or more varied set of first-time visitors could provide broader evidence than the single earlier formative test.
+1. Test the comparison on a physical iPhone with VoiceOver (or another screen reader), and record device, OS, browser and assistive-technology versions, orientation, pages and actions. The earlier user-reported iPhone and iOS screen-reader checks were on a previous version.
+2. Ask a first-time visitor to use the comparison and explain the meaning and limits of its result; the previous feedback predates this interaction.
+3. Retry W3C Jigsaw when its service is available. The current CSS has not received a fresh external validation result.
+4. A larger or more varied set of first-time visitors could provide broader evidence than the single earlier formative test.
 
 The [manual test sheet](docs/manual-test-sheet.md) has the current status for each check. Earlier screenshots and notes are listed in the [evidence index](docs/evidence/README.md) as historical records, not evidence for the interactive release.
