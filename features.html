@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The key UAR features focus on requirement mapping, compatibility review and clear decision outcomes.">
+    <meta name="description" content="Explore UAR's proposed features and try a browser-only illustrative comparison of user-entered application requirements.">
     <title>Features | UAR</title>
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
@@ -35,7 +35,7 @@
         <div class="container narrow">
           <p class="eyebrow">Feature set</p>
           <h1>UAR focuses on understanding fit before execution.</h1>
-          <p class="lead">These are parts of a proposed workflow, not claims about features currently running in this website.</p>
+          <p class="lead">These are parts of a proposed workflow. The comparison below is an educational example, not a feature of a verified UAR runtime.</p>
         </div>
       </section>
 
@@ -59,6 +59,89 @@
           </article>
         </div>
       </div>
+
+      <section class="section section-muted" aria-labelledby="comparison-title">
+        <div class="container">
+          <div class="section-heading narrow">
+            <p class="eyebrow">Interactive example</p>
+            <h2 id="comparison-title">Compare requirements you enter.</h2>
+            <p>This browser-only example compares an application's stated operating system, memory and storage needs with values you enter for a hypothetical environment. It does not inspect your device or verify the information.</p>
+          </div>
+
+          <p class="comparison-disclaimer">
+            This is a learning aid, not a real compatibility assessment, security review, safety check or execution decision. The values stay in this page; they are not sent to a server or saved.
+          </p>
+
+          <p id="comparison-unavailable" class="note-panel">
+            The interactive comparison needs JavaScript enabled. You can still read the fixed fictional example below.
+          </p>
+
+          <form id="comparison-form" class="comparison-form" hidden>
+            <fieldset class="comparison-group">
+              <legend>Application requirements</legend>
+              <p id="requirements-help" class="field-help">Choose or enter the details you know. Leave anything unknown blank to flag it for review.</p>
+              <div class="comparison-fields">
+                <div class="form-field">
+                  <label for="required-os">Supported operating system</label>
+                  <select id="required-os" name="requiredOs" aria-describedby="requirements-help">
+                    <option value="">Not known</option>
+                    <option value="windows">Windows</option>
+                    <option value="macos">macOS</option>
+                    <option value="linux">Linux</option>
+                    <option value="any">No OS-specific requirement</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="required-memory">Minimum memory (GB)</label>
+                  <input id="required-memory" name="requiredMemory" type="number" min="0" max="1024" step="any" inputmode="decimal" aria-describedby="requirements-help">
+                </div>
+                <div class="form-field">
+                  <label for="required-storage">Minimum free storage (GB)</label>
+                  <input id="required-storage" name="requiredStorage" type="number" min="0" max="1024" step="any" inputmode="decimal" aria-describedby="requirements-help">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="comparison-group">
+              <legend>Hypothetical environment</legend>
+              <p id="environment-help" class="field-help">Enter details for an example environment. These values are not read from your device.</p>
+              <div class="comparison-fields">
+                <div class="form-field">
+                  <label for="environment-os">Operating system</label>
+                  <select id="environment-os" name="environmentOs" aria-describedby="environment-help">
+                    <option value="">Not known</option>
+                    <option value="windows">Windows</option>
+                    <option value="macos">macOS</option>
+                    <option value="linux">Linux</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="environment-memory">Available memory (GB)</label>
+                  <input id="environment-memory" name="environmentMemory" type="number" min="0" max="1024" step="any" inputmode="decimal" aria-describedby="environment-help">
+                </div>
+                <div class="form-field">
+                  <label for="environment-storage">Available free storage (GB)</label>
+                  <input id="environment-storage" name="environmentStorage" type="number" min="0" max="1024" step="any" inputmode="decimal" aria-describedby="environment-help">
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="comparison-actions">
+              <button class="button button-primary" type="submit">Compare entered values</button>
+              <button class="button button-secondary" id="load-example" type="button">Load fictional example</button>
+              <button class="button button-secondary" type="reset">Clear values</button>
+            </div>
+          </form>
+
+          <p id="comparison-announcement" class="visually-hidden" role="status" aria-live="polite"></p>
+          <section id="comparison-results" class="comparison-results" aria-labelledby="results-title" hidden>
+            <h3 id="results-title">Illustrative comparison result</h3>
+            <p id="overall-result" class="overall-result"></p>
+            <ul id="comparison-result-list" class="decision-list"></ul>
+            <p class="comparison-footnote">These results describe only the values entered here. They do not confirm real-world compatibility or assess security, privacy or safety.</p>
+          </section>
+        </div>
+      </section>
 
       <section class="section section-muted" aria-labelledby="example-title">
         <div class="container">
@@ -164,5 +247,6 @@
         </div>
       </div>
     </footer>
+    <script src="assets/js/compatibility-comparison.js" defer></script>
   </body>
 </html>

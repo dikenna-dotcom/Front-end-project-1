@@ -1,4 +1,4 @@
-"""Copy only the public static site files for a Netlify deployment."""
+"""Copy only the public site files for a Netlify deployment."""
 
 from pathlib import Path
 import shutil
@@ -17,12 +17,13 @@ PUBLIC_FILES = (
     "faq.html",
     "404.html",
     "assets/css/style.css",
+    "assets/js/compatibility-comparison.js",
 )
 
 
 def build_release():
-    """Create or refresh the static upload folder without project documentation."""
-    allowed_files = set(PUBLIC_FILES) | {"assets/js/review-planner.js"}
+    """Create or refresh the publish folder without project documentation."""
+    allowed_files = set(PUBLIC_FILES)
     if RELEASE.exists():
         existing_files = {
             path.relative_to(RELEASE).as_posix()
@@ -43,12 +44,8 @@ def build_release():
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
 
-    stale_script = RELEASE / "assets" / "js" / "review-planner.js"
-    if stale_script.exists():
-        stale_script.unlink()
-
     print("Prepared Netlify static release at %s" % RELEASE)
-    print("Copied %s public static files." % len(PUBLIC_FILES))
+    print("Copied %s public files." % len(PUBLIC_FILES))
 
 
 if __name__ == "__main__":
