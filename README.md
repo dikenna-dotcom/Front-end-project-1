@@ -2,6 +2,12 @@
 
 **By Dikenna Okose**
 
+## Completion status
+
+The site, browser-only comparison, GitHub repository and Netlify deployment are in place. I rebuilt the release, checked all nine HTML pages with the W3C Nu checker, syntax-checked the comparison script, exercised the comparison locally and on the live site, and recorded responsive, zoom, keyboard, mobile, visitor and deployment evidence in this repository.
+
+The W3C CSS validator returned HTTP 500 on two attempts, so I cannot claim a formal CSS-validator pass. I manually checked the rendered stylesheet and responsive layouts in the browser. The iPhone/VoiceOver result is user-reported, and exact device software versions and spoken announcements were not recorded. These evidence limits are documented; they are not claims of a known site defect. No project can guarantee an assessment grade, which is decided by the assessor against the course criteria.
+
 ## Project overview
 
 For this milestone, I built an information-led website to explain the idea behind Universal Application Runtime (UAR). I wanted someone who had never heard of UAR to understand the proposal, follow the suggested review process, and try a small comparison using their own example values.
@@ -127,11 +133,9 @@ I check the files in the release before deploying; the release should have nine 
 
 ## Testing
 
-I built the Netlify release and checked that it contains the nine HTML pages, stylesheet and comparison script, with no project documentation. On 28 October 2026, the W3C Nu checker returned zero messages for all nine HTML pages, and `node --check assets/js/compatibility-comparison.js` passed. The updated CSS loaded in the browser, but the Jigsaw service returned HTTP 500 when I tried to validate it, so I cannot claim a fresh CSS validator result.
+I built the Netlify release and checked that it contains the nine HTML pages, stylesheet and comparison script, with no project documentation. On 29 October 2026, the W3C Nu checker returned zero messages for all nine current HTML pages. `node --check assets/js/compatibility-comparison.js` and the release build passed. The updated CSS loaded in the browser and I checked the rendered layouts, but Jigsaw returned HTTP 500 on two attempts; I cannot claim a CSS-validator pass.
 
-I tested the local release build of the interactive version on 28 October 2026. All nine routes were checked at 320px, 390px, 768px, 1024px and 1440px (45 checks), with no horizontal overflow. At 640 CSS pixels, every route reflowed without overflow or overlapping navigation. I tested the comparison's example, matching, missing-value, no-OS-specific-requirement, invalid-value and reset behavior. I also checked keyboard access, the no-JavaScript fallback, and that editing values clears an old result. Full details and checks still open are in [testing.md](testing.md) and the [manual test sheet](docs/manual-test-sheet.md).
-
-I checked HTML by submitting all nine pages to Nu; the recorded run returned zero messages and zero errors. I checked the JavaScript syntax with `node --check`, and ran the Python release builder successfully. I also manually checked the CSS in the browser by viewing the page layout, navigation, form controls, status cards, focus styling and reflow at the recorded widths and at 200% zoom. This visual inspection is separate from the CSS validator: Jigsaw returned HTTP 500 on two attempts (28 and 29 October), so I do not describe the stylesheet as validator-passed.
+I tested the local release build of the interactive version on 28 October 2026. All nine routes were checked at 320px, 390px, 768px, 1024px and 1440px (45 checks), with no horizontal overflow. At 640 CSS pixels, every route reflowed without overflow or overlapping navigation. I tested the comparison's example, matching, missing-value, no-OS-specific-requirement, invalid-value and reset behavior. I also checked keyboard access, the no-JavaScript fallback, and that editing values clears an old result. The full results and the limits of the available evidence are in [testing.md](testing.md) and the [manual test sheet](docs/manual-test-sheet.md).
 
 After pushing the changes, I checked the published site on 28 October 2026. All nine page routes and the CSS and JavaScript files returned HTTP 200; an unknown route returned HTTP 404 and showed the branded not-found page. I ran the fictional comparison on the live Features page and confirmed its three results, then checked that the form fitted a 320px CSS viewport without horizontal overflow. Netlify's dashboard was not available to me, so I could not confirm the deployment commit shown there.
 
@@ -153,7 +157,7 @@ python scripts/build_netlify_release.py
 
 The release script copies only the site pages, stylesheet and comparison script. It leaves out the project notes and evidence.
 
-The source is maintained on the `main` branch in the [GitHub repository](https://github.com/dikenna-dotcom/Front-end-project-1). The published website code was compared with commit `f381702`; subsequent commits added documentation and test evidence rather than changing the page files, stylesheet or comparison script. I could not check the Netlify dashboard's deployment record. I never put passwords or access tokens in the project.
+The source is maintained on the `main` branch in the [GitHub repository](https://github.com/dikenna-dotcom/Front-end-project-1). The published website code was compared with commit `f381702`; subsequent commits added documentation and test evidence rather than changing the page files, stylesheet or comparison script. The live source comparison verifies the served site content; I did not have separate access to the Netlify dashboard deployment record. I never put passwords or access tokens in the project.
 
 ### Development stages in Git
 
@@ -199,7 +203,7 @@ I replace the example `git add` paths and commit message with the actual files a
 | [Google Search](https://www.google.com/) | I searched for font options while considering the visual design. | I did not keep exact search queries or result URLs. I chose the system-font stack in the final CSS; no external font is loaded. |
 | [Public Code Institute milestone examples](docs/research.md) | Looked at five public projects for README organization, audience descriptions and CSS organization. | I did not reuse their code, text or images. Specific repositories and files are in the research notes. |
 | [W3C Nu HTML Checker](https://validator.w3.org/nu/) | Checked all nine current HTML pages. | It reported zero messages for the recorded check on 28 October 2026. |
-| [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) | Attempted to validate the current stylesheet. | The recorded attempt returned HTTP 500, so I do not claim a passing CSS-validator result. |
+| [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) | Attempted to validate the current stylesheet twice. | Both attempts returned HTTP 500. The attempts are recorded as unavailable, not as passing CSS validation. |
 | [GitHub repository](https://github.com/dikenna-dotcom/Front-end-project-1) | Stored the source and version history. | The current branch is `main`. |
 | [Netlify site](https://uar-project.netlify.app/) | Publishes and serves the static site through the repository-connected build. | I verified the live pages against source content, but did not have access to the Netlify dashboard's deploy record. |
 

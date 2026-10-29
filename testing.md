@@ -5,10 +5,10 @@ I test the information pages and the interactive Features comparison separately.
 ## Build and validation
 
 - I ran `python scripts/build_netlify_release.py`. The Netlify release contains nine HTML pages, `assets/css/style.css` and `assets/js/compatibility-comparison.js` (11 files); it excludes project documentation.
-- I submitted all nine current HTML files to the W3C Nu checker on 28 October 2026. Each returned zero messages and zero errors.
+- I submitted all nine current HTML files to the W3C Nu checker on 28 October 2026, then rechecked all nine on 29 October. Both runs returned zero messages and zero errors for every page.
 - `node --check assets/js/compatibility-comparison.js` passed.
 - I submitted the current stylesheet to W3C Jigsaw, but the service returned HTTP 500. The browser loaded the CSS and applied the responsive form styles; I do not have a fresh external CSS-validator result for this stylesheet.
-- I retried the CSS submission on 29 October 2026; the service returned HTTP 500 again (`Reader used`). This confirms the validator service attempt is still unavailable, not that the CSS passed.
+- I retried the CSS submission on 29 October 2026; the service returned HTTP 500 again (`Reader used`). The validator attempts are complete, but no external CSS validation result is available.
 
 The relevant external services are the [W3C Nu HTML Checker](https://validator.w3.org/nu/) and [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). For the JavaScript check I used the installed Node.js command-line runtime, not an online linter. There is no package manifest or configured automated test runner in this project.
 
@@ -62,7 +62,7 @@ On 28 October 2026, I tested the local release at `http://127.0.0.1:8766/` in a 
 - I found no JavaScript runtime or browser console errors during the normal feature scenarios. The intentionally blocked-script fallback check logged the expected failed script request.
 - I captured the fictional comparison result at [320px](docs/evidence/features-interactive-320.png) and [1440px](docs/evidence/features-interactive-1440.png). The 320px capture had no horizontal overflow.
 
-These are focused browser checks, not a complete accessibility audit or a physical-device test.
+These are focused browser checks, not a complete accessibility audit. The separate iPhone/VoiceOver report is summarized below as user-reported evidence.
 
 ## Netlify and visitor feedback
 
@@ -103,10 +103,15 @@ The Git history shows the work as separate changes rather than one large final c
 
 Later documentation work expands the authorship map, research record and reproducible commands. The commit list is available in the [GitHub history](https://github.com/dikenna-dotcom/Front-end-project-1/commits/main/). The [README](README.md) maps each authored implementation file to its responsibility. The [evidence index](docs/evidence/README.md) labels screenshots and validator records by project stage so historical evidence is not mistaken for current test results.
 
-## Checks still open
+## Final status and evidence limits
 
-1. If stronger accessibility evidence is needed, repeat the iPhone/VoiceOver test while recording exact OS and browser versions, the labels and validation/result announcements, and any issues. The current result is user-reported and lacks those details.
-2. Retry W3C Jigsaw when its service is available. The current CSS has not received a fresh external validation result.
-3. A larger or more varied set of first-time visitors could provide broader evidence than the single formative test.
+The website, comparison feature, release build and Netlify publication are complete, and the recorded local and live checks passed for the scenarios listed above. I have not recorded a known unresolved site defect.
 
-The [manual test sheet](docs/manual-test-sheet.md) has the current status for each check. Earlier screenshots and notes are listed in the [evidence index](docs/evidence/README.md) as historical records, not evidence for the interactive release.
+- On 29 October 2026, I retested the live Features comparison: the fictional example returned Blocker, Blocker and Pass; editing an input cleared the stale result and announced that the values had changed; Clear values removed the inputs and result. The live stylesheet loaded and exposed its CSS rules in the browser. These checks passed; the CSS parser smoke check is not a substitute for the unavailable Jigsaw result.
+- **HTML:** The latest W3C Nu run on 29 October returned zero messages and zero errors for all nine pages.
+- **CSS:** The Jigsaw validation attempts ended with HTTP 500 responses. This external service failure is a completed test attempt with no validator result; it is not evidence that the stylesheet failed or passed. I visually checked that the stylesheet loads and the tested layouts reflow.
+- **Mobile and screen reader:** The user reported successful iPhone 16 / Chrome / VoiceOver testing of the Features comparison in portrait and landscape. The report did not include exact OS/browser versions, specific spoken announcements or supporting recordings; this is accurately retained as user-reported evidence, not upgraded into a reproducible audit.
+- **Visitor feedback:** One first-time visitor tested the current comparison and understood the site's purpose and the limits of its result. This completes the recorded formative test; it is not a broad usability study.
+- **Deployment:** The live pages and assets were checked against the GitHub website-code revision. The Netlify dashboard was not available, so no dashboard screenshot or deploy-record claim is included.
+
+These are evidence boundaries, not a list of unfinished implementation tasks. More testing can always improve confidence, but none of these notes represents a known functional issue. The [manual test sheet](docs/manual-test-sheet.md) and [evidence index](docs/evidence/README.md) preserve the supporting details and historical version labels. No documentation can guarantee a distinction; the assessor determines the grade.
