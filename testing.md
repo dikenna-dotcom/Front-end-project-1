@@ -58,13 +58,20 @@ After pushing commit `f381702`, I checked the published [Netlify site](https://u
 
 The floating Netlify badge remains enabled; it is injected outside my source HTML and CSS.
 
-On 27 October 2026, one first-time visitor reviewed the earlier static version. They understood UAR as a concept for considering whether an application might work in an environment and knew that the example was not an actual device or application assessment. This is one formative test, not a broad user study, and it does not test the current form.
+On 27 October 2026, one first-time visitor reviewed the earlier static version. They understood UAR as a concept for considering whether an application might work in an environment and knew that the example was not an actual device or application assessment. That feedback is historical and does not test the current form.
+
+On 28 October 2026, a first-time visitor tried the current live comparison and said:
+
+> “I understood that the website explains UAR and how it could help people review application compatibility. The comparison helped me understand the different outcomes. A pass suggests the requirements appear to match, but it doesn’t guarantee that an application is safe or will work. I also understood that the website itself doesn’t scan my device, test applications or produce a real compatibility assessment.”
+
+Their response shows that they understood the site's purpose and the limits of the illustrative result. No improvement was reported from this session. This is one formative visitor test, not a broad user study.
+
+The user also reported testing the live Features comparison with VoiceOver on a physical iPhone 16 using Chrome in portrait and landscape on 28 October 2026. They described the test as successful. The iOS and Chrome versions, exact announcements, detailed actions and any supporting recording were not provided, so I record this as a user-reported result rather than a reproducible screen-reader audit. The exact iOS version and browser version remain unknown.
 
 ## Checks still open
 
-1. Test the comparison on a physical iPhone with VoiceOver (or another screen reader), and record device, OS, browser and assistive-technology versions, orientation, pages and actions. The earlier user-reported iPhone and iOS screen-reader checks were on a previous version.
-2. Ask a first-time visitor to use the comparison and explain the meaning and limits of its result; the previous feedback predates this interaction.
-3. Retry W3C Jigsaw when its service is available. The current CSS has not received a fresh external validation result.
-4. A larger or more varied set of first-time visitors could provide broader evidence than the single earlier formative test.
+1. If stronger accessibility evidence is needed, repeat the iPhone/VoiceOver test while recording exact OS and browser versions, the labels and validation/result announcements, and any issues. The current result is user-reported and lacks those details.
+2. Retry W3C Jigsaw when its service is available. The current CSS has not received a fresh external validation result.
+3. A larger or more varied set of first-time visitors could provide broader evidence than the single formative test.
 
 The [manual test sheet](docs/manual-test-sheet.md) has the current status for each check. Earlier screenshots and notes are listed in the [evidence index](docs/evidence/README.md) as historical records, not evidence for the interactive release.
