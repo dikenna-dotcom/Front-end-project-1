@@ -8,6 +8,25 @@ I test the information pages and the interactive Features comparison separately.
 - I submitted all nine current HTML files to the W3C Nu checker on 28 October 2026. Each returned zero messages and zero errors.
 - `node --check assets/js/compatibility-comparison.js` passed.
 - I submitted the current stylesheet to W3C Jigsaw, but the service returned HTTP 500. The browser loaded the CSS and applied the responsive form styles; I do not have a fresh external CSS-validator result for this stylesheet.
+- I retried the CSS submission on 29 October 2026; the service returned HTTP 500 again (`Reader used`). This confirms the validator service attempt is still unavailable, not that the CSS passed.
+
+The relevant external services are the [W3C Nu HTML Checker](https://validator.w3.org/nu/) and [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). For the JavaScript check I used the installed Node.js command-line runtime, not an online linter. There is no package manifest or configured automated test runner in this project.
+
+To reproduce the release build and syntax check from the repository root:
+
+```powershell
+python scripts/build_netlify_release.py
+node --check assets/js/compatibility-comparison.js
+git diff --check
+```
+
+To serve the generated release locally:
+
+```powershell
+python -m http.server 8000 --directory build/netlify
+```
+
+I open `http://localhost:8000/` in a browser and stop the server with `Ctrl+C`. For the source files instead of the generated release, I run `python -m http.server 8000` from the repository root.
 
 ## Earlier published-site checks
 
@@ -47,14 +66,14 @@ These are focused browser checks, not a complete accessibility audit or a physic
 
 ## Netlify and visitor feedback
 
-After pushing commit `f381702`, I checked the published [Netlify site](https://uar-project.netlify.app/) on 28 October 2026.
+After pushing website-code commit `f381702`, I checked the published [Netlify site](https://uar-project.netlify.app/) on 28 October 2026. Later commits updated documentation and evidence rather than the published HTML, stylesheet or script.
 
 - The nine page routes returned HTTP 200 with their expected titles; the stylesheet and comparison script also returned HTTP 200.
 - An unknown route returned HTTP 404 and showed the branded not-found page. The explicit `/404.html` page returned HTTP 200 as expected.
 - In the browser, the Features form loaded, the fictional example returned two Blockers and one Pass, and the result included the disclaimer that it is not a real-world assessment.
 - At a 320 CSS-pixel viewport, the Features page had no horizontal overflow and the comparison form remained visible.
-- I compared all nine live HTML pages with the GitHub files at `f381702`, allowing for Netlify's injected badge comment and its clean-URL link rewrites. The page structure, content and remaining attributes matched. The deployed stylesheet and comparison script matched the same commit exactly.
-- The live content therefore matches the latest GitHub source commit. I could not access the Netlify dashboard to independently check its deploy record.
+- I compared all nine live HTML pages with the GitHub files at website-code commit `f381702`, allowing for Netlify's injected badge comment and its clean-URL link rewrites. The page structure, content and remaining attributes matched. The deployed stylesheet and comparison script matched the same commit exactly.
+- The live site code therefore matches that GitHub revision. Later commits updated documentation and evidence rather than the published HTML, CSS or JavaScript. I could not access the Netlify dashboard to independently check its deploy record.
 
 The floating Netlify badge remains enabled; it is injected outside my source HTML and CSS.
 
@@ -67,6 +86,22 @@ On 28 October 2026, a first-time visitor tried the current live comparison and s
 Their response shows that they understood the site's purpose and the limits of the illustrative result. No improvement was reported from this session. This is one formative visitor test, not a broad user study.
 
 The user also reported testing the live Features comparison with VoiceOver on a physical iPhone 16 using Chrome in portrait and landscape on 28 October 2026. They described the test as successful. The iOS and Chrome versions, exact announcements, detailed actions and any supporting recording were not provided, so I record this as a user-reported result rather than a reproducible screen-reader audit. The exact iOS version and browser version remain unknown.
+
+## Development and evidence trail
+
+The Git history shows the work as separate changes rather than one large final commit:
+
+| Commit | Development step |
+|---|---|
+| `5c80a2d` | Brought the earlier site back toward an information-led static-site scope. |
+| `22b5c4a` | Improved the homepage's question-led routes for visitors. |
+| `062dc10` | Added the bounded browser-only comparison as a distinct feature. |
+| `2961772` | Documented the interaction and its initial local test evidence. |
+| `f381702` | Recorded the live site and comparison checks. |
+| `e9ec337` | Recorded and pushed actual 200% zoom evidence. |
+| `2d8e752` | Recorded the reported phone/VoiceOver test and first-time visitor feedback. |
+
+Later documentation work expands the authorship map, research record and reproducible commands. The commit list is available in the [GitHub history](https://github.com/dikenna-dotcom/Front-end-project-1/commits/main/). The [README](README.md) maps each authored implementation file to its responsibility. The [evidence index](docs/evidence/README.md) labels screenshots and validator records by project stage so historical evidence is not mistaken for current test results.
 
 ## Checks still open
 

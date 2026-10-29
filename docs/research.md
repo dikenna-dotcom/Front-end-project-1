@@ -1,12 +1,12 @@
-# Research notes: other milestone projects
+# Research notes and sources
 
-## What I looked at
+## Public project examples
 
 On 24 October 2026, I looked at five public Code Institute milestone repositories. I read the visible README files and checked selected home-page HTML and stylesheets through GitHub. I did not review their live websites in a browser. These are older student projects, so I have not treated them as evidence of the current rubric, grades, or accessibility standards.
 
 I did not see a licence in the root listings I checked. That does not tell me whether a licence exists elsewhere in those repositories, and I have not reused their code, text, or images. I used the examples only to think about how I could organise and explain my own project.
 
-| Project I looked at | Pages or files I checked | What I noticed | What I took from it | What did not suit my project |
+| Project I looked at | Pages or files I checked | What I noticed | What I took from it | What did not suit my project | What I applied in my project |
 | --- | --- | --- | --- | --- | --- |
 | [damien-meere/frontend-milestone](https://github.com/damien-meere/frontend-milestone) | [README](https://github.com/damien-meere/frontend-milestone/blob/e8f27591be65602c6ed9ab026be65409fe296327/README.md), [index.html](https://github.com/damien-meere/frontend-milestone/blob/e8f27591be65602c6ed9ab026be65409fe296327/index.html), [style.css](https://github.com/damien-meere/frontend-milestone/blob/e8f27591be65602c6ed9ab026be65409fe296327/assets/css/style.css) | The README explains a training-company idea, and the stylesheet has clear sections for typography and navigation. | I liked that the README gave the project context and that the CSS was easy to scan. | I did not need Bootstrap or Font Awesome for my site. I also wanted the navigation to stay in normal layout flow and wrap on small screens. | I wrote a project overview and kept the navigation in a flexible layout. |
 | [nealbrophy/GetHubby](https://github.com/nealbrophy/GetHubby) | [README](https://github.com/nealbrophy/GetHubby/blob/e10152d34fb88311baa912b3087052993b71e386/README.md), [index.html](https://github.com/nealbrophy/GetHubby/blob/e10152d34fb88311baa912b3087052993b71e386/index.html), [style.css](https://github.com/nealbrophy/GetHubby/blob/e10152d34fb88311baa912b3087052993b71e386/css/style.css) | The README describes an imagined service, and the CSS separates general styles from navigation and layout. | It reminded me that clear sections make a stylesheet easier to maintain. | Bootstrap and the project's more involved styling were unnecessary for my smaller static site. | I kept one shared stylesheet and used straightforward Grid and Flexbox rules. |
@@ -23,3 +23,38 @@ I did not see a licence in the root listings I checked. That does not tell me wh
 ## Attribution
 
 These projects helped me think about documentation, page purpose, and responsive CSS. I did not include their source code, wording, or assets in my site. I have not assumed that public access gives permission to reuse their work. The links above point to the files I reviewed; this is research context, not a claim that those projects meet my current course requirements.
+
+## Typography research
+
+I searched Google for font ideas while considering the visual style. The final project uses a local system font stack defined by `--font-sans` in `assets/css/style.css`, not a downloaded typeface or a Google Fonts embed. I did not keep the exact search queries, date-by-result notes, or URLs for individual font pages, so I cannot reliably list specific typefaces or claim that I compared formal specimens. The practical choice was to keep type readable without adding a remote font dependency.
+
+## Project and implementation references
+
+| Website or material | How I used it | What I can claim |
+|---|---|---|
+| Project brief and pass/merit/distinction guidance supplied with the project | Defined the educational topic, user-centred goals and assessment criteria. | This is owner-supplied course material. It informed my scope; it is not evidence that a separate UAR runtime has been built. |
+| [Google Search](https://www.google.com/) | Looked for font ideas before choosing the final typography. | I did not retain the exact queries or result URLs. The final site uses system fonts and makes no external font request. |
+| [W3C Nu HTML Checker](https://validator.w3.org/nu/) | Checked all nine current HTML pages. | The recorded check on 28 October 2026 returned zero messages and zero errors. |
+| [W3C CSS Validation Service (Jigsaw)](https://jigsaw.w3.org/css-validator/) | Attempted to validate the current stylesheet and retried it. | The recorded attempts on 28 and 29 October returned HTTP 500. They are not CSS validation passes. |
+| [GitHub](https://github.com/dikenna-dotcom/Front-end-project-1) | Hosted the source repository and commit history. I also used the five public examples listed above as inspiration for documentation and organization. | My project source, wording and assets are maintained separately. I did not copy code or assets from the cited examples. |
+| [Netlify](https://www.netlify.com/) | Hosted the published static site from the GitHub-connected build configuration. | The public site was checked against the repository source, but I did not have dashboard access to inspect the deploy record. |
+| Local Python and browser tools | Served the site, built the release folder, inspected responsive behavior and exercised the comparison. | `python -m http.server` and the standard-library build script run locally; they are not third-party site dependencies. |
+
+## What I did not use
+
+- I did not load a Google Font, remote stylesheet, image bank, third-party UI library or external JavaScript bundle into the site.
+- I did not inspect a UAR runtime repository or claim that the proposed runtime exists.
+- I did not use the example student projects as code, copy, asset or assessment evidence.
+
+These notes distinguish what I actually viewed or tested from what I did not preserve. If I repeat font research, I should keep the search terms, specific pages reviewed and the reason for the final choice so that the design process can be checked later.
+
+## Research-to-design decisions
+
+| What I considered | Decision I made | Evidence in my project |
+|---|---|---|
+| Examples of milestone project README files, user stories and stylesheet organization | I used those examples only to help organize my own explanation and CSS. I wrote original UAR copy and kept the project without a framework or copied assets. | My site files and the [research table above](#public-project-examples), which names the repositories and exact files I viewed. |
+| Font options discovered with Google search | I selected a system font stack instead of loading a remote font. | `--font-sans` in `assets/css/style.css`; the release has no font asset or external font request. I did not retain the Google search queries or exact result pages. |
+| The course brief and distinction guidance | I kept the explanatory pages and added a narrowly scoped comparison to demonstrate browser interaction, while making clear that the UAR runtime is not implemented. | `features.html`, `assets/js/compatibility-comparison.js`, the [design notes](design-decisions.md) and the [assessment matrix](assessment-matrix.md). |
+| Current validation and deployment requirements | I documented which HTML checker passed, the CSS validator service failure, the local build and the live-site source comparison separately. | The [test log](../testing.md) and [manual test sheet](manual-test-sheet.md); a failed CSS-validation request is not counted as a pass. |
+
+This table describes the decisions I can support with the files and records available. It does not claim that I ran a formal literature review, downloaded font specimens, carried out a quantitative font study, or followed a complete academic research method.

@@ -15,7 +15,16 @@ I use this register to keep the wording on the site accurate. The site combines 
 | Universal support, guaranteed safety, prices, customers, partners, downloads or benchmarks | Master brief section 2 | No approved supporting facts were supplied | No positive claim is made; no installer or runtime is represented as available | Site-wide |
 | Use-case examples | Master brief section 2 and 7 | Authored hypotheticals; not product outcomes | Explicitly labelled hypothetical; no scenario is stated as tested | Use Cases |
 | Project status and future direction | Master brief section 2 and 7 | Runtime status and roadmap not supplied | Website scope is stated; future product status is left for owner confirmation | About, FAQ |
+| Original page wording | Project brief and my own explanation of the topic | Written for this site; it is not copied from the milestone examples listed in `research.md` | Plain-language, first-person explanation of the proposal and its limits | All pages |
+| Audience and navigation choices | My design process, user goals and the supplied user-centric project brief | Design rationale is in `design-decisions.md`; one first-time visitor gave formative feedback on the current comparison | Organised around first-time visitor questions, with shared navigation and explicit scope | Home, all pages |
+| Typography | My Google search for font ideas; exact search queries and result URLs were not retained | The implementation can be checked in `assets/css/style.css`; the chosen stack is local system fonts | No remotely hosted font is loaded; the site does not claim that a specific Google font is used | Site-wide |
+| Homepage workflow diagram | My authored HTML and CSS | Markup is in `index.html`; visual rules are in `assets/css/style.css` | An explanatory illustration of the proposal, not a runtime screenshot | Home |
+| Testing and validation statements | Recorded local/browser results and public validator responses, summarized in `testing.md` | Evidence is version- and date-specific; the Jigsaw HTTP 500 is a failed attempt, not a pass | I state what was checked, on which version, and what remains unknown | README and testing documentation |
 
 How I use this register
 
 If I add a claim about a real or planned capability, I check it against an approved source and record where it appears and how certain it is. This register only covers the information supplied for this project; it does not verify claims about a separate UAR product.
+
+## Code and authorship
+
+I wrote the site-specific page copy and the original HTML, CSS, browser JavaScript and Python release script. The [README's file map](../README.md#what-i-wrote-and-where-it-lives) names each implementation file and explains its role. I used public milestone projects only as research context for organization and README structure; their source code and assets are not included in this project. The project includes AI-assisted development and documentation, disclosed in the README credits.
