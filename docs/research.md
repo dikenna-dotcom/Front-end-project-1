@@ -34,7 +34,7 @@ I searched Google for font ideas while considering the visual style. The final p
 |---|---|---|
 | Project brief and pass/merit/distinction guidance supplied with the project | Defined the educational topic, user-centred goals and assessment criteria. | This is owner-supplied course material. It informed my scope; it is not evidence that a separate UAR runtime has been built. |
 | [Google Search](https://www.google.com/) | Looked for font ideas before choosing the final typography. | I did not retain the exact queries or result URLs. The final site uses system fonts and makes no external font request. |
-| [W3C Nu HTML Checker](https://validator.w3.org/nu/) | Checked all nine current HTML pages. | The recorded check on 28 October 2026 returned zero messages and zero errors. |
+| [W3C Nu HTML Checker](https://validator.w3.org/nu/) | Checked all nine current HTML pages on 28 and 29 October 2026. | Both recorded runs returned zero messages and zero errors for every page. |
 | [W3C CSS Validation Service (Jigsaw)](https://jigsaw.w3.org/css-validator/) | Attempted to validate the current stylesheet and retried it. | The recorded attempts on 28 and 29 October returned HTTP 500. They are not CSS validation passes. |
 | [GitHub](https://github.com/dikenna-dotcom/Front-end-project-1) | Hosted the source repository and commit history. I also used the five public examples listed above as inspiration for documentation and organization. | My project source, wording and assets are maintained separately. I did not copy code or assets from the cited examples. |
 | [Netlify](https://www.netlify.com/) | Hosted the published static site from the GitHub-connected build configuration. | The public site was checked against the repository source, but I did not have dashboard access to inspect the deploy record. |
@@ -46,7 +46,7 @@ I searched Google for font ideas while considering the visual style. The final p
 - I did not inspect a UAR runtime repository or claim that the proposed runtime exists.
 - I did not use the example student projects as code, copy, asset or assessment evidence.
 
-These notes distinguish what I actually viewed or tested from what I did not preserve. If I repeat font research, I should keep the search terms, specific pages reviewed and the reason for the final choice so that the design process can be checked later.
+These notes distinguish what I actually viewed or tested from what I did not preserve. The exact font-search terms and result pages are unavailable, so the research record does not identify particular typefaces; it records the final system-font choice and why it suited this project.
 
 ## Research-to-design decisions
 
